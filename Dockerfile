@@ -13,12 +13,14 @@ COPY server ./server
 COPY public ./public
 COPY seed ./seed
 
-RUN mkdir -p /data && chown node:node /data
-USER node
+COPY --chmod=755 docker-entrypoint.sh /usr/local/bin/
+
+# Starts as root only long enough to make /data writable, then runs as PUID:PGID.
 VOLUME /data
 EXPOSE 8080
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s \
   CMD node -e "fetch('http://localhost:'+process.env.PORT+'/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
 
+ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["node", "server/index.js"]

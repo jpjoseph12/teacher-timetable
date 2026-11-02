@@ -16,4 +16,6 @@
   <Config Name="Data" Target="/data" Default="/mnt/user/appdata/teacher-timetable" Mode="rw" Description="Database and session secret" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/teacher-timetable</Config>
   <Config Name="Password" Target="APP_PASSWORD" Default="" Mode="" Description="Password for signing in. Use a long one: the app is reachable from the internet." Type="Variable" Display="always" Required="true" Mask="true"></Config>
   <Config Name="Time zone" Target="TZ" Default="Europe/London" Mode="" Description="Used to work out the current period" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/London</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID that owns the data folder" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID that owns the data folder" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
 </Container>

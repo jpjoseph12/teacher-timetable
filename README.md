@@ -18,6 +18,7 @@ The image is built by GitHub Actions on every push to `main` and published to `g
 3. Set **Password**. The other defaults are:
    - port 8095
    - data at `/mnt/user/appdata/teacher-timetable`
+   - the data folder is owned by `PUID` 99 and `PGID` 100 (Unraid's nobody:users). These are under **Show more settings**.
 4. Apply. The app is at `http://<server>:8095`.
 
 To update, use **Check for Updates** on the Docker tab after a new build finishes.
