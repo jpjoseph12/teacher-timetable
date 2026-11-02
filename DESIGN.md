@@ -200,6 +200,9 @@ The teacher's Word timetable colours, fixed by brand commitment: **S4 A1 Magenta
 - **Pencil** (ink-3): free periods, past lessons, band labels, empty states, placeholders, timestamps.
 - **Saved Green** (ok) and **Warning Rust** (warn): save status text and login errors only.
 
+### Dark
+Dark mode follows the device unless Settings pins Light or Dark (`data-theme` on `<html>`, stored per device). The cobalt rail stays as the identity, slightly deepened (#24409E). The page turns to night ink (#11131C) with bands #191C28 and rules #272B3B, and ink becomes #E9EBF3. Cobalt and red used as text switch to their own lifted tokens (`accent-ink` #93A8F4, `ribbon-ink` #FF7A8A) so period numbers, links and the Next tag stay legible. Class colours are unchanged in dark mode.
+
 ### Named Rules
 **The Edge Tab Rule.** Class colour sits on the edge of an element as a tab, never as a fill behind text. The code beside it carries the meaning; the colour confirms it.
 

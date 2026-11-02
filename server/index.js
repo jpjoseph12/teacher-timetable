@@ -2,7 +2,8 @@ import express from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { openDb, getState, setSetting, DAYS } from './db.js';
-import { createAuth } from './auth.js';
+import { createAuth, createWidgetKey } from './auth.js';
+import { glance } from '../public/schedule.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const PORT = Number(process.env.PORT) || 8080;
@@ -10,6 +11,7 @@ const DATA_DIR = process.env.DATA_DIR || path.join(here, '..', 'data');
 
 const db = openDb(DATA_DIR);
 const auth = createAuth({ password: process.env.APP_PASSWORD, secret: process.env.SESSION_SECRET, dataDir: DATA_DIR });
+const widgetKey = createWidgetKey(DATA_DIR);
 
 const app = express();
 // Trust X-Forwarded-* only from a reverse proxy on a private network, so the
@@ -27,11 +29,22 @@ const bad = (res, msg) => res.status(400).json({ error: msg });
 
 app.get('/health', (req, res) => res.json({ ok: true }));
 
+// Widget feed: class names and times only, never notes.
+app.get('/widget.json', (req, res) => {
+  res.set({ 'Cache-Control': 'no-store', 'Referrer-Policy': 'no-referrer', 'X-Robots-Tag': 'noindex' });
+  if (!widgetKey.matches(req.query.key)) return res.status(404).json({ error: 'Not found.' });
+  const at = typeof req.query.now === 'string' && !Number.isNaN(Date.parse(req.query.now)) ? new Date(req.query.now) : new Date();
+  res.json(glance(getState(db), at));
+});
+
 app.post('/api/login', auth.login);
 app.post('/api/logout', auth.logout);
 app.use('/api', auth.require);
 
 app.get('/api/state', (req, res) => res.json(getState(db)));
+
+app.get('/api/widget-key', (req, res) => res.json({ key: widgetKey.get() }));
+app.post('/api/widget-key', (req, res) => res.json({ key: widgetKey.rotate() }));
 
 app.put('/api/settings/bell-times', (req, res) => {
   const bells = req.body;

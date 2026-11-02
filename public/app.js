@@ -493,6 +493,27 @@ function viewSettings() {
           </div>
         </section>
         <section>
+          <h2>Appearance</h2>
+          <p>Auto follows this device's light or dark setting. The choice is remembered on this device only.</p>
+          <div class="segmented" role="radiogroup" aria-label="Theme">
+            ${['auto', 'light', 'dark'].map((t) => `<label><input type="radio" name="theme" value="${t}" ${currentTheme() === t ? 'checked' : ''}><span>${t[0].toUpperCase()}${t.slice(1)}</span></label>`).join('')}
+          </div>
+        </section>
+        <section>
+          <h2>Home screen widget</h2>
+          <p>Show what's on now and next on your Android home screen with the free KWGT app. This link shows class names and times only, never notes, but anyone who has it can see your timetable, so keep it to yourself.</p>
+          <div class="linkrow">
+            <input type="text" class="widget-url" id="widget-url" readonly aria-label="Widget link" value="Loading…">
+            <button class="btn" id="copy-widget">Copy link</button>
+            <button class="btn" id="rotate-widget">Make a new link</button>
+            <span class="status" id="widget-status"></span>
+          </div>
+          <details class="setup">
+            <summary>Set it up in KWGT</summary>
+            <ol class="steps" id="widget-steps"></ol>
+          </details>
+        </section>
+        <section>
           <h2>Backup</h2>
           <p>Download every class note and lesson note as a JSON file.</p>
           <div class="actions"><a class="btn" href="/api/export" download>${icon('download')}Export notes</a>
@@ -502,6 +523,47 @@ function viewSettings() {
     </div>`);
 
   const status = (id, text, cls = '') => { const el = document.getElementById(id); el.textContent = text; el.className = `status ${cls}`; };
+
+  document.querySelectorAll('input[name=theme]').forEach((r) => r.addEventListener('change', () => setTheme(r.value)));
+
+  const showWidget = ({ key }) => {
+    const url = `${location.origin}/widget.json?key=${key}`;
+    document.getElementById('widget-url').value = url;
+    const f = (path) => `$wg("${url}", json, "${path}")$`;
+    const copyable = (path) => `<code>${esc(f(path))}</code> <button class="btn" data-copy="${esc(f(path))}">Copy</button>`;
+    const formula = (label, path) => `<li><span>${label}</span>${copyable(path)}</li>`;
+    document.getElementById('widget-steps').innerHTML = `
+      <li>Install <strong>KWGT Kustom Widget Maker</strong> from the Play Store.</li>
+      <li>Long-press your home screen, choose <strong>Widgets</strong>, then drag a <strong>KWGT</strong> widget (4×2 works well) onto the screen.</li>
+      <li>Tap the empty widget, choose <strong>Create</strong>, and add a <strong>Text</strong> item for each line below. Set each text to its formula: tap the text field, then the calculator icon, and paste.
+        <ul class="formulas">
+          ${formula('“Now” or “Next”', '.label')}
+          ${formula('Class', '.code')}
+          ${formula('Period and time', '.detail')}
+          ${formula('What follows', '.then')}
+        </ul></li>
+      <li>For the class colour, add a <strong>Shape</strong>, open its colour, tap the calculator icon and paste:
+        <ul class="formulas">${formula('Colour', '.color')}</ul></li>
+      <li>Tap the save icon. KWGT refreshes web data every few minutes, so it can trail the bell slightly.</li>`;
+  };
+  api('/api/widget-key').then(showWidget).catch(() => status('widget-status', "Couldn't load the link.", 'err'));
+
+  document.getElementById('copy-widget').addEventListener('click', async () => {
+    status('widget-status', (await copyText(document.getElementById('widget-url').value)) ? 'Copied' : 'Select the link and copy it', 'ok');
+  });
+  document.getElementById('widget-steps').addEventListener('click', async (e) => {
+    const b = e.target.closest('[data-copy]');
+    if (!b) return;
+    b.textContent = (await copyText(b.dataset.copy)) ? 'Copied' : 'Copy failed';
+    setTimeout(() => { b.textContent = 'Copy'; }, 1600);
+  });
+  document.getElementById('rotate-widget').addEventListener('click', async () => {
+    if (!confirm('Make a new widget link? Widgets using the old link will stop updating until you paste in the new one.')) return;
+    try {
+      showWidget(await api('/api/widget-key', { method: 'POST' }));
+      status('widget-status', 'New link made. Update your widget with it.', 'ok');
+    } catch (e) { status('widget-status', e.message, 'err'); }
+  });
 
   document.getElementById('save-bells').addEventListener('click', async () => {
     document.querySelectorAll('[data-weekday]').forEach((s) => { bells.weekdays[s.dataset.weekday] = s.value; });
@@ -535,6 +597,30 @@ function viewSettings() {
       status('tt-status', 'Timetable saved', 'ok');
     } catch (e) { status('tt-status', e.message, 'err'); }
   });
+}
+
+/* ---------- theme ---------- */
+
+function currentTheme() {
+  try { return localStorage.getItem('theme') || 'auto'; } catch { return 'auto'; }
+}
+
+function setTheme(t) {
+  try { if (t === 'auto') localStorage.removeItem('theme'); else localStorage.setItem('theme', t); } catch { /* private mode: applies to this visit only */ }
+  if (t === 'auto') delete document.documentElement.dataset.theme;
+  else document.documentElement.dataset.theme = t;
+}
+
+// The clipboard API needs HTTPS; on a plain LAN address fall back to a hidden textarea.
+async function copyText(text) {
+  try { await navigator.clipboard.writeText(text); return true; } catch { /* fall through */ }
+  const ta = Object.assign(document.createElement('textarea'), { value: text });
+  ta.style.cssText = 'position:fixed;opacity:0';
+  document.body.append(ta);
+  ta.select();
+  const ok = document.execCommand('copy');
+  ta.remove();
+  return ok;
 }
 
 function classRow(c) {

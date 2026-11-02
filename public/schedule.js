@@ -125,6 +125,36 @@ export function nextMeeting(state, classId, from) {
   return null;
 }
 
+// The now/next summary behind the home-screen widget: the lesson in progress,
+// else the next one today, else the first lesson of the next school day.
+export function glance(state, at) {
+  const here = locate(state, at);
+  const cur = here.current?.kind === 'period' ? here.current : null;
+  const focus = cur || here.next;
+  const name = (b) => classById(state, b?.classId)?.code ?? 'Free';
+  // Free periods get a neutral grey so a widget's colour shape always has a value.
+  const colour = (b) => classById(state, b?.classId)?.color ?? '#9AA1B5';
+  const label = cur ? 'Now' : here.isToday ? 'Next' : DAY_NAMES[here.day];
+  let detail = focus ? `P${focus.period} · ${formatTime(focus.start)}–${formatTime(focus.end)}` : '';
+  if (cur) detail += ` · ${here.minutesLeft} min left`;
+  const after = focus && here.blocks.find((b) => b.kind === 'period' && b.period > focus.period);
+  return {
+    date: here.date,
+    day: DAY_NAMES[here.day],
+    label,
+    code: focus ? name(focus) : 'No lessons',
+    detail,
+    color: colour(focus),
+    ink: inkOn(colour(focus)),
+    then: after ? `Then ${name(after)} at ${formatTime(after.start)}` : 'Last lesson of the day',
+    then_color: colour(after),
+    periods: here.blocks.filter((b) => b.kind === 'period').map((b) => ({
+      period: b.period, start: b.start, end: b.end, code: name(b), color: colour(b),
+    })),
+    updated: `${String(at.getHours()).padStart(2, '0')}:${String(at.getMinutes()).padStart(2, '0')}`,
+  };
+}
+
 // Readable ink for text sitting on a class colour.
 export function inkOn(hex) {
   const n = parseInt(hex.slice(1), 16);

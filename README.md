@@ -5,7 +5,7 @@ A personal timetable for the 2026–27 session at Harris Academy, with a running
 - **Today**: what's on now and next, with the current lesson's notes.
 - **Week**: the full Mon–Fri grid. Click a lesson to open its notes beside the grid.
 - **Classes**: each class's running note and its lesson log, newest first.
-- **Settings**: bell times, which weekdays run seven periods, the timetable itself, class colours, and a JSON export of every note.
+- **Settings**: bell times, which weekdays run seven periods, the timetable itself, class colours, light or dark mode, the home screen widget link, and a JSON export of every note.
 
 The timetable and bell times are seeded from `seed/timetable.json` the first time the app starts. After that they live in the database and are edited in Settings.
 
@@ -29,6 +29,12 @@ Point your reverse proxy or tunnel (for example Nginx Proxy Manager, SWAG or a C
 
 - The app trusts `X-Forwarded-Proto`, so its session cookie is marked Secure behind HTTPS.
 - Sign-in attempts are limited to 10 per 15 minutes per address.
+
+### Home screen widget (Android)
+
+**Settings → Home screen widget** gives a private link to `/widget.json`, a feed of what's on now and next. It has class names and times only, never notes. Use it with the free KWGT app; Settings lists copy-paste formulas with your link already filled in. **Make a new link** stops the old one working.
+
+When the app is installed to the home screen, long-pressing its icon also offers **Today** and **This week** shortcuts.
 
 ### Backups
 

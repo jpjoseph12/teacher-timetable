@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { locate, timeline, meetingsLabel, nextMeeting, inkOn } from '../public/schedule.js';
+import { locate, timeline, meetingsLabel, nextMeeting, inkOn, glance } from '../public/schedule.js';
 
 const seed = JSON.parse(fs.readFileSync(new URL('../seed/timetable.json', import.meta.url)));
 const state = { classes: seed.classes, slots: seed.slots, bells: seed.bells };
@@ -63,4 +63,28 @@ test('ink picks dark text on yellow and white on purple', () => {
   assert.equal(inkOn('#7030A0'), '#FFFFFF');
   assert.equal(inkOn('#FA4CD9'), '#14161F');
   assert.equal(inkOn('#4EA72E'), '#14161F');
+});
+
+test('widget glance shows the lesson in progress and what follows', () => {
+  const g = glance(state, at('2026-11-02T11:00'));
+  assert.equal(g.label, 'Now');
+  assert.equal(g.code, 'S2 A2');
+  assert.equal(g.detail, 'P3 · 10:50–11:40 · 40 min left');
+  assert.equal(g.color, '#4EA72E');
+  assert.equal(g.then, 'Then S4 A1 at 11:40');
+});
+
+test('widget glance points at the next lesson during lunch', () => {
+  const g = glance(state, at('2026-11-02T13:30'));
+  assert.equal(g.label, 'Next');
+  assert.equal(g.code, 'S2 B3');
+  assert.equal(g.then, 'Then Free at 15:00');
+});
+
+test('widget glance rolls over to the next school day', () => {
+  const g = glance(state, at('2026-11-06T18:00'));
+  assert.equal(g.label, 'Monday');
+  assert.equal(g.date, '2026-11-09');
+  assert.equal(g.code, 'S1 Cb Lit');
+  assert.equal(g.periods.length, 7);
 });

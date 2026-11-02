@@ -72,6 +72,23 @@ export function createAuth({ password, secret, dataDir }) {
   };
 }
 
+// The home-screen widget can't sign in, so it reads a notes-free feed with a
+// long random key in its URL. Making a new key revokes the old one.
+export function createWidgetKey(dataDir) {
+  const file = path.join(dataDir, 'widget-key');
+  let key = fs.existsSync(file) ? fs.readFileSync(file, 'utf8').trim() : null;
+  const rotate = () => {
+    key = crypto.randomBytes(24).toString('base64url');
+    fs.writeFileSync(file, key, { mode: 0o600 });
+    return key;
+  };
+  return {
+    get: () => key || rotate(),
+    rotate,
+    matches: (given) => Boolean(key) && typeof given === 'string' && safeEqual(given, key),
+  };
+}
+
 function loadOrCreateSecret(dataDir) {
   const file = path.join(dataDir, 'session-secret');
   if (fs.existsSync(file)) return fs.readFileSync(file, 'utf8').trim();
