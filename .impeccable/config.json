@@ -38,6 +38,24 @@
         ],
         "createdAt": "2026-11-02T19:47:09.500Z",
         "reason": "Claude: throwaway decision-round sketches for unchosen directions, not shipped UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-11-02T19:57:03.533Z",
+        "reason": "Claude: unchosen decision-round sketches in their own worlds' fonts, not shipped UI"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-split-flap.html"
+        ],
+        "createdAt": "2026-11-02T19:57:03.614Z",
+        "reason": "Claude: unchosen decision-round sketches in their own worlds' fonts, not shipped UI"
       }
     ]
   }
