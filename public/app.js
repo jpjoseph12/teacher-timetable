@@ -535,16 +535,18 @@ function viewSettings() {
     document.getElementById('widget-steps').innerHTML = `
       <li>Install <strong>KWGT Kustom Widget Maker</strong> from the Play Store.</li>
       <li>Long-press your home screen, choose <strong>Widgets</strong>, then drag a <strong>KWGT</strong> widget (4×2 works well) onto the screen.</li>
-      <li>Tap the empty widget, choose <strong>Create</strong>, and add a <strong>Text</strong> item for each line below. Set each text to its formula: tap the text field, clear what's there, and paste. The preview fills in once you tap the tick.
-        <ul class="formulas">
-          ${formula('“Now” or “Next”', '.label')}
-          ${formula('Class', '.code')}
-          ${formula('Period and time', '.detail')}
-          ${formula('What follows', '.then')}
-        </ul></li>
-      <li>For the class colour, add a <strong>Shape</strong>, open its <strong>Paint</strong> tab, tap the box at the right of <strong>Color</strong>, choose <strong>Formula</strong>, and paste:
+      <li>Tap the empty widget and choose <strong>Create</strong>. Add items with <strong>+</strong> in this order. To make any setting a formula, tap the box at the right of its row, tap <strong>Formula</strong> at the top, then tap the setting, clear it and paste.</li>
+      <li><strong>Card:</strong> a <strong>Shape</strong> set to Rectangle. Width <code>$si(rwidth)$</code>, height <code>$si(rheight)$</code>, corners 22, and on <strong>Paint</strong> the colour <code>#FF11131C</code>.</li>
+      <li><strong>Class colour tab:</strong> another Rectangle. Width 10, height <code>$si(rheight)*0.55$</code>, corners 4. On <strong>Position</strong>, anchor Center Left, X offset 24. Its colour is:
         <ul class="formulas">${formula('Colour', '.color')}</ul></li>
-      <li>Tap the save icon. KWGT refreshes web data every few minutes, so it can trail the bell slightly.</li>`;
+      <li><strong>Lines:</strong> a <strong>Stack Group</strong>. On <strong>Position</strong>, anchor Center Left, X offset 50; on <strong>Layer</strong>, scale 135. Open it and add a <strong>Text</strong> for each line. The preview fills in once you tap the tick.
+        <ul class="formulas">
+          ${formula('“Now” or “Next”: size 17, colour #FFB5BACB', '.label')}
+          ${formula('Class: size 46, font Roboto Condensed Bold, colour #FFE9EBF3', '.code')}
+          ${formula('Period and time: size 17, colour #FFB5BACB', '.detail')}
+          ${formula('What follows: size 17, colour #FFE9EBF3', '.then')}
+        </ul></li>
+      <li>Tap the save icon, then resize the widget to full width and two rows. KWGT refreshes web data every few minutes, so it can trail the bell slightly.</li>`;
   };
   api('/api/widget-key').then(showWidget).catch(() => status('widget-status', "Couldn't load the link.", 'err'));
 

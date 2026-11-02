@@ -291,7 +291,7 @@ a.row:hover { background: var(--band); }
 .steps code { font: 13px/1.5 ui-monospace, monospace; color: var(--ink); background: var(--band); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 5px; overflow-wrap: anywhere; }
 .steps strong { color: var(--ink); }
 .formulas { list-style: none; margin: 10px 0 4px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.formulas li { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 12px; align-items: center; }
+.formulas li { display: grid; grid-template-columns: 190px minmax(0, 1fr) auto; gap: 12px; align-items: center; }
 .formulas .btn { padding: 6px 12px; font-size: 14px; }
 @media (max-width: 767px) {
   .formulas li { grid-template-columns: minmax(0, 1fr) auto; gap: 4px 8px; }
