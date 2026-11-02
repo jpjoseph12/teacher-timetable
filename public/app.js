@@ -535,14 +535,14 @@ function viewSettings() {
     document.getElementById('widget-steps').innerHTML = `
       <li>Install <strong>KWGT Kustom Widget Maker</strong> from the Play Store.</li>
       <li>Long-press your home screen, choose <strong>Widgets</strong>, then drag a <strong>KWGT</strong> widget (4×2 works well) onto the screen.</li>
-      <li>Tap the empty widget, choose <strong>Create</strong>, and add a <strong>Text</strong> item for each line below. Set each text to its formula: tap the text field, then the calculator icon, and paste.
+      <li>Tap the empty widget, choose <strong>Create</strong>, and add a <strong>Text</strong> item for each line below. Set each text to its formula: tap the text field, clear what's there, and paste. The preview fills in once you tap the tick.
         <ul class="formulas">
           ${formula('“Now” or “Next”', '.label')}
           ${formula('Class', '.code')}
           ${formula('Period and time', '.detail')}
           ${formula('What follows', '.then')}
         </ul></li>
-      <li>For the class colour, add a <strong>Shape</strong>, open its colour, tap the calculator icon and paste:
+      <li>For the class colour, add a <strong>Shape</strong>, open its <strong>Paint</strong> tab, tap the box at the right of <strong>Color</strong>, choose <strong>Formula</strong>, and paste:
         <ul class="formulas">${formula('Colour', '.color')}</ul></li>
       <li>Tap the save icon. KWGT refreshes web data every few minutes, so it can trail the bell slightly.</li>`;
   };
