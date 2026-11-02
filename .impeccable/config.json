@@ -20,6 +20,24 @@
         ],
         "createdAt": "2026-11-02T19:32:08.102Z",
         "reason": "Claude: throwaway decision-round sketch, not shipped UI; low contrast comes from the deliberate dim-the-week demo and jotter label boxes"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-11-02T19:47:09.422Z",
+        "reason": "Claude: throwaway decision-round sketches for unchosen directions, not shipped UI"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/challenger-split-flap.html"
+        ],
+        "createdAt": "2026-11-02T19:47:09.500Z",
+        "reason": "Claude: throwaway decision-round sketches for unchosen directions, not shipped UI"
       }
     ]
   }

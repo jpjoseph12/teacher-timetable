@@ -32,6 +32,15 @@ const icon = (name, label) =>
 const longDate = (d) => d.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
 const shortDate = (d) => d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
 const range = (b) => `${formatTime(b.start)}–${formatTime(b.end)}`;
+// The note's saved state is visible at rest, not only after typing.
+function statusSpan(id, updatedAt) {
+  if (!updatedAt) return `<span class="status" id="${id}"></span>`;
+  const d = new Date(updatedAt);
+  const when = isoDate(d) === isoDate(new Date())
+    ? d.toLocaleTimeString('en-GB', { hour: 'numeric', minute: '2-digit' })
+    : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+  return `<span class="status ok" id="${id}">Saved ${when}</span>`;
+}
 const colourVars = (cls) => (cls ? `--c:${cls.color};--on:${inkOn(cls.color)}` : '');
 
 class ApiError extends Error {}
@@ -153,13 +162,13 @@ async function lessonPanel(date, period, { closeHref } = {}) {
         ${closeHref ? `<a class="btn icon-only" href="${closeHref}">${icon('close', 'Close lesson')}</a>` : ''}
       </div>
       <div class="field">
-        <h3><label for="lesson-note">This lesson</label><span class="status" id="lesson-status"></span></h3>
+        <h3><label for="lesson-note">This lesson</label>${statusSpan('lesson-status', mine?.updated_at)}</h3>
         <textarea class="note" id="lesson-note" data-date="${date}" data-period="${period}" data-class="${cls?.id ?? ''}"
           placeholder="${cls ? 'Plan, what you covered, homework set' : 'Marking, cover, reminders'}">${esc(mine?.body)}</textarea>
       </div>
       ${cls ? `
       <div class="field">
-        <h3><label for="class-note">Class note</label><span class="status" id="class-status"></span></h3>
+        <h3><label for="class-note">Class note</label>${statusSpan('class-status', classNote?.updated_at)}</h3>
         <textarea class="note short" id="class-note" data-class="${cls.id}"
           placeholder="Seating plan, targets, reminders for every ${esc(cls.code)} lesson">${esc(classNote?.body)}</textarea>
       </div>
@@ -226,20 +235,17 @@ async function viewToday(dateParam) {
   if (!focus) focus = blocks.find((b) => b.kind === 'period');
   const fcls = classById(state, focus.classId);
 
-  let stateLine;
-  if (current?.kind === 'period') stateLine = `<strong>Now</strong> · ${here.minutesLeft} min left`;
-  else if (current?.kind === 'break') stateLine = `<strong>${esc(current.label)}</strong> until ${formatTime(current.end)} · then`;
-  else if (isNowDay || (live && !here.isToday)) stateLine = '<strong>Next</strong>';
-  else stateLine = 'First lesson';
-
-  const classNote = fcls ? await api(`/api/classes/${fcls.id}/note`) : null;
+  let status = '';
+  if (current?.kind === 'period') status = ` · ${here.minutesLeft} min left`;
+  else if (current?.kind === 'break') status = ` · after ${esc(current.label.toLowerCase())}`;
+  const after = blocks.find((b) => b.kind === 'period' && b.period > focus.period);
+  const acls = after && classById(state, after.classId);
   const card = `
-    <section class="nowcard ${fcls ? 'tabbed' : ''}" style="${colourVars(fcls)}" aria-label="Current lesson">
-      ${isNowDay || (live && !here.isToday) ? '<span class="ribbon-mark" aria-hidden="true"></span>' : ''}
-      <p class="state">${stateLine}</p>
+    <section class="nowcard ${fcls ? 'tabbed' : ''}" style="${colourVars(fcls)}" aria-label="${current?.kind === 'period' ? 'Now' : 'Next'}">
+      ${isNowDay && current?.kind === 'period' ? '<span class="ribbon-mark" aria-hidden="true"></span>' : ''}
       <h2 class="code">${fcls ? esc(fcls.code) : 'Free'}</h2>
-      <p class="when">Period ${focus.period} · ${range(focus)}${fcls ? ` · ${esc(meetingsLabel(state, fcls.id))}` : ''}</p>
-      ${classNote?.body ? `<p class="classnote">${esc(classNote.body)}</p>` : ''}
+      <p class="when">Period ${focus.period} · ${range(focus)}${status}</p>
+      ${after ? `<p class="then">Then ${acls ? `<span class="chip" style="${colourVars(acls)}">${esc(acls.code)}</span>` : '<strong>Free</strong>'} at ${formatTime(after.start)}</p>` : '<p class="then">Last lesson of the day</p>'}
     </section>`;
 
   const rows = blocks.map((b) => {
@@ -328,7 +334,7 @@ async function viewWeek(mondayParam, openDate, openPeriod) {
         const before = blocks.slice(0, j).reverse().find((x) => x.kind === 'period');
         if (!before) return;
         usedGaps.add(before.period);
-        html += `<div class="band" style="grid-row:${gapRow(before.period)};grid-column:${col}">${esc(b.label)} ${formatTime(b.start)}</div>`;
+        html += `<div class="band ${iso === todayIso ? 'today-col' : ''}" style="grid-row:${gapRow(before.period)};grid-column:${col}"><span class="long">${esc(b.label)}</span><span class="short" aria-hidden="true">${esc(b.label.length > 6 ? `${b.label.slice(0, 3)}.` : b.label)}</span> ${formatTime(b.start)}</div>`;
         return;
       }
       const cls = classById(state, b.classId);
@@ -423,7 +429,7 @@ async function viewClass(id) {
       </header>
       <div class="classpage">
         <div class="field">
-          <h3><label for="class-note">Class note</label><span class="status" id="class-status"></span></h3>
+          <h3><label for="class-note">Class note</label>${statusSpan('class-status', note.updated_at)}</h3>
           <textarea class="note" id="class-note" data-class="${id}" placeholder="Seating plan, targets, assessment dates, reminders">${esc(note.body)}</textarea>
         </div>
         <div class="field">
