@@ -61,4 +61,6 @@ test('next meeting skips past lessons', () => {
 test('ink picks dark text on yellow and white on purple', () => {
   assert.equal(inkOn('#FFFF00'), '#14161F');
   assert.equal(inkOn('#7030A0'), '#FFFFFF');
+  assert.equal(inkOn('#FA4CD9'), '#14161F');
+  assert.equal(inkOn('#4EA72E'), '#14161F');
 });

@@ -243,9 +243,9 @@ async function viewToday(dateParam) {
   const card = `
     <section class="nowcard ${fcls ? 'tabbed' : ''}" style="${colourVars(fcls)}" aria-label="${current?.kind === 'period' ? 'Now' : 'Next'}">
       ${isNowDay && current?.kind === 'period' ? '<span class="ribbon-mark" aria-hidden="true"></span>' : ''}
-      <h2 class="code">${fcls ? esc(fcls.code) : 'Free'}</h2>
+      <h2 class="code">${fcls ? `<a href="#/class/${fcls.id}">${esc(fcls.code)}</a>` : 'Free'}</h2>
       <p class="when">Period ${focus.period} · ${range(focus)}${status}</p>
-      ${after ? `<p class="then">Then ${acls ? `<span class="chip" style="${colourVars(acls)}">${esc(acls.code)}</span>` : '<strong>Free</strong>'} at ${formatTime(after.start)}</p>` : '<p class="then">Last lesson of the day</p>'}
+      ${after ? `<p class="then">Then <span class="then-code code ${acls ? 'tabbed' : ''}" style="${colourVars(acls)}">${acls ? esc(acls.code) : 'Free'}</span> at ${formatTime(after.start)}</p>` : '<p class="then">Last lesson of the day</p>'}
     </section>`;
 
   const rows = blocks.map((b) => {

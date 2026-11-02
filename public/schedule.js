@@ -133,5 +133,8 @@ export function inkOn(hex) {
     return s <= 0.03928 ? s / 12.92 : ((s + 0.055) / 1.055) ** 2.4;
   };
   const L = 0.2126 * lin(n >> 16) + 0.7152 * lin((n >> 8) & 255) + 0.0722 * lin(n & 255);
-  return L > 0.36 ? '#14161F' : '#FFFFFF';
+  const DARK_L = 0.0081; // relative luminance of #14161F
+  const onWhite = 1.05 / (L + 0.05);
+  const onDark = (L + 0.05) / (DARK_L + 0.05);
+  return onDark >= onWhite ? '#14161F' : '#FFFFFF';
 }
