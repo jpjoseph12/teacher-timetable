@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/assigned.html"
+        ],
+        "createdAt": "2026-11-02T19:32:08.021Z",
+        "reason": "Claude: throwaway decision-round sketch, not shipped UI; low contrast comes from the deliberate dim-the-week demo and jotter label boxes"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/model-pick.html"
+        ],
+        "createdAt": "2026-11-02T19:32:08.102Z",
+        "reason": "Claude: throwaway decision-round sketch, not shipped UI; low contrast comes from the deliberate dim-the-week demo and jotter label boxes"
+      }
+    ]
+  }
+}

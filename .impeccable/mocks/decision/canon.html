@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Calendar</title>
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#111827;background:#fff;display:grid;grid-template-rows:60px 1fr}
+header{display:flex;align-items:center;gap:20px;padding:0 24px;border-bottom:1px solid #E5E7EB}
+header b{font-size:18px}
+.seg{display:flex;border:1px solid #E5E7EB;border-radius:8px;overflow:hidden;font-size:14px}
+.seg span{padding:6px 14px}.seg .on{background:#F3F4F6;font-weight:600}
+main{display:grid;grid-template-columns:1fr 420px}
+.wk{padding:20px 24px}
+h1{font-size:22px;font-weight:600;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:70px repeat(5,1fr);border:1px solid #E5E7EB;border-radius:10px;overflow:hidden}
+.grid>div{border-right:1px solid #F3F4F6;border-bottom:1px solid #F3F4F6;height:96px;padding:6px}
+.grid .dh{height:44px;font-size:14px;font-weight:600;padding:12px}
+.grid .p{font-size:12px;color:#6B7280}
+.ev{height:100%;border-radius:6px;padding:8px;font-size:12px;color:#374151}
+.ev b{display:block;font-size:15px;color:#111827}
+.nowline{position:relative}.nowline:after{content:"";position:absolute;left:0;right:0;top:28px;height:2px;background:#2563EB}
+.drawer{border-left:1px solid #E5E7EB;padding:24px;display:flex;flex-direction:column;gap:12px;background:#F9FAFB}
+.drawer h2{font-size:22px}
+.lab{font-size:12px;color:#6B7280;font-weight:600}
+textarea{border:1px solid #E5E7EB;border-radius:8px;min-height:140px;padding:10px;font:inherit;background:#fff}
+</style></head><body>
+<header><b>Timetable</b><div class="seg"><span>Today</span><span class="on">Week</span><span>Classes</span></div><span style="margin-left:auto;font-size:14px">‹ 2 – 6 Nov 2026 ›</span></header>
+<main>
+<section class="wk">
+<h1>November 2026</h1>
+<div class="grid">
+<div class="dh"></div><div class="dh" style="color:#2563EB">Mon 2</div><div class="dh">Tue 3</div><div class="dh">Wed 4</div><div class="dh">Thu 5</div><div class="dh">Fri 6</div>
+<div class="p">P1 8:55</div><div><div class="ev" style="background:#F3F4F6"><b>S1 Cb Lit</b></div></div><div><div class="ev" style="background:#FDE7FA"><b>S4 A1</b></div></div><div><div class="ev" style="background:#F1F1F1"><b>S3 A2</b></div></div><div><div class="ev" style="background:#FFE5E5"><b>S1 A5</b></div></div><div><div class="ev" style="background:#E6F3E1"><b>S2 A2</b></div></div>
+<div class="p">P2 9:45</div><div></div><div><div class="ev" style="background:#FDE7FA"><b>S4 A1</b></div></div><div><div class="ev" style="background:#FFFFD6"><b>S2 B3</b></div></div><div><div class="ev" style="background:#EFE3F6"><b>S1 B5</b></div></div><div><div class="ev" style="background:#FFE5E5"><b>S1 A5</b></div></div>
+<div class="p">P3 10:50</div><div class="nowline"><div class="ev" style="background:#E6F3E1"><b>S2 A2</b>Now</div></div><div><div class="ev" style="background:#FFE5E5"><b>S1 A5</b></div></div><div><div class="ev" style="background:#EFE3F6"><b>S1 B5</b></div></div><div><div class="ev" style="background:#E0F6FD"><b>S4 B4</b></div></div><div></div>
+<div class="p">P4 11:40</div><div><div class="ev" style="background:#FDE7FA"><b>S4 A1</b></div></div><div><div class="ev" style="background:#FFFFD6"><b>S2 B3</b></div></div><div></div><div><div class="ev" style="background:#E0F6FD"><b>S4 B4</b></div></div><div><div class="ev" style="background:#FFFFD6"><b>S2 B3</b></div></div>
+<div class="p">P5</div><div></div><div><div class="ev" style="background:#E6F3E1"><b>S2 A2</b></div></div><div><div class="ev" style="background:#FFE5E5"><b>S1 A5</b></div></div><div><div class="ev" style="background:#FCE9DF"><b>Higher</b></div></div><div><div class="ev" style="background:#FDE7FA"><b>S4 A1</b></div></div>
+</div>
+</section>
+<aside class="drawer"><div class="lab">Mon 2 Nov · P4 · 11:40–12:30</div><h2>S4 A1</h2><div class="lab">Lesson note</div><textarea>Finish poetry analysis, Q4–6.</textarea><div class="lab">Class note</div><textarea>Prelim 14 Jan.</textarea></aside>
+</main>
+</body></html>

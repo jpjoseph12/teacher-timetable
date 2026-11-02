@@ -1,0 +1,59 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Planner</title>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;font-family:'Atkinson Hyperlegible',sans-serif;color:#15182B;background:#fff;display:grid;grid-template-columns:88px 1fr 470px}
+.rail{background:#2340A8;color:#fff;display:flex;flex-direction:column;align-items:center;padding:24px 0;gap:22px;font-size:12px}
+.rail .mk{font-family:'Barlow Condensed';font-weight:700;font-size:26px;letter-spacing:.02em}
+.rail a{display:flex;flex-direction:column;align-items:center;gap:6px;color:#C9D3F5}
+.rail a.on{opacity:1}.rail a i{width:26px;height:26px;border:2px solid #fff;border-radius:6px;display:block}
+.wk{padding:28px 32px;position:relative}
+.top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px}
+h1{font-family:'Barlow Condensed';font-weight:700;font-size:40px}
+.top span{font-size:15px;color:#4A4F66}
+.grid{display:grid;grid-template-columns:64px repeat(5,1fr);border-top:2px solid #15182B}
+.dh{font-family:'Barlow Condensed';font-weight:700;font-size:20px;padding:10px 10px;border-bottom:1px solid #D9DEE8}
+.dh.today{color:#D7263D}
+.p{font-family:'Barlow Condensed';font-weight:700;font-size:34px;text-align:center;border-bottom:1px solid #D9DEE8;padding-top:10px;color:#2340A8}
+.c{border-bottom:1px solid #D9DEE8;border-left:1px solid #D9DEE8;height:84px;padding:8px 10px;position:relative;font-size:13px;color:#4A4F66}
+.c b{display:block;font-size:19px;color:#15182B;margin-top:2px}
+.c .tab{position:absolute;left:-1px;top:8px;bottom:8px;width:7px}
+.c.free{background:repeating-linear-gradient(0deg,#fff 0 13px,#EEF1F6 13px 14px);color:#5E647C}
+.div{grid-column:1/-1;font-size:12px;letter-spacing:.08em;color:#7d849c;padding:4px 74px;border-bottom:1px solid #D9DEE8;background:#F6F8FB}
+.ribbon{position:absolute;left:calc(32px + 64px + 6px);top:86px;width:14px;height:284px;background:#D7263D;clip-path:polygon(0 0,100% 0,100% 100%,50% 92%,0 100%)}
+.now{outline:3px solid #15182B;outline-offset:-3px}
+.dim .c:not(.sel){opacity:.45}
+.panel{border-left:1px solid #D9DEE8;padding:28px 30px;display:flex;flex-direction:column;gap:16px;background:#fff}
+.code{display:flex;align-items:center;gap:12px}
+.code i{width:12px;height:44px;background:#FA4CD9}
+.code b{font-family:'Barlow Condensed';font-size:44px;font-weight:700}
+.meta{font-size:15px;color:#4A4F66}
+.lab{font-size:12px;letter-spacing:.08em;color:#7d849c;margin-bottom:6px}
+.note{border:1px solid #D9DEE8;border-radius:8px;padding:14px;font-size:16px;line-height:1.6;min-height:150px}
+.saved{font-size:13px;color:#2E7D4F}
+.log div{border-top:1px solid #D9DEE8;padding:10px 0;font-size:14px}
+</style></head><body>
+<nav class="rail"><div class="mk">H</div><a class="on"><i></i>Today</a><a><i></i>Week</a><a><i></i>Classes</a><a><i></i>Settings</a></nav>
+<main class="wk">
+<div class="top"><h1>Week of 2 November</h1><span>‹ Previous · This week · Next ›</span></div>
+<div class="ribbon"></div>
+<div class="grid dim">
+<div></div><div class="dh today">Mon 2</div><div class="dh">Tue 3</div><div class="dh">Wed 4</div><div class="dh">Thu 5</div><div class="dh">Fri 6</div>
+<div class="p">1</div><div class="c"><span class="tab" style="background:#B8BCCB"></span>8:55<b>S1 Cb Lit</b></div><div class="c"><span class="tab" style="background:#FA4CD9"></span>8:55<b>S4 A1</b></div><div class="c"><span class="tab" style="background:#A6A6A6"></span>8:55<b>S3 A2</b></div><div class="c"><span class="tab" style="background:#FF3F3F"></span>8:55<b>S1 A5</b></div><div class="c"><span class="tab" style="background:#4EA72E"></span>8:55<b>S2 A2</b></div>
+<div class="p">2</div><div class="c free">9:45<b style="color:#5E647C">Free</b></div><div class="c"><span class="tab" style="background:#FA4CD9"></span>9:45<b>S4 A1</b></div><div class="c"><span class="tab" style="background:#FFFF00"></span>9:45<b>S2 B3</b></div><div class="c"><span class="tab" style="background:#7030A0"></span>9:45<b>S1 B5</b></div><div class="c"><span class="tab" style="background:#FF3F3F"></span>9:45<b>S1 A5</b></div>
+<div class="div">INTERVAL</div>
+<div class="p">3</div><div class="c now sel"><span class="tab" style="background:#4EA72E"></span>10:50 · now<b>S2 A2</b></div><div class="c"><span class="tab" style="background:#FF3F3F"></span>10:50<b>S1 A5</b></div><div class="c"><span class="tab" style="background:#7030A0"></span>10:50<b>S1 B5</b></div><div class="c"><span class="tab" style="background:#00B0F0"></span>10:35<b>S4 B4</b></div><div class="c free">10:50<b style="color:#5E647C">Free</b></div>
+<div class="p">4</div><div class="c sel" style="background:#FFF0FC"><span class="tab" style="background:#FA4CD9"></span>11:40<b>S4 A1</b></div><div class="c"><span class="tab" style="background:#FFFF00"></span>11:40<b>S2 B3</b></div><div class="c free">11:40<b style="color:#5E647C">Free</b></div><div class="c"><span class="tab" style="background:#00B0F0"></span>11:40<b>S4 B4</b></div><div class="c"><span class="tab" style="background:#FFFF00"></span>11:40<b>S2 B3</b></div>
+<div class="p">5</div><div class="c free">12:30<b style="color:#5E647C">Free</b></div><div class="c"><span class="tab" style="background:#4EA72E"></span>12:30<b>S2 A2</b></div><div class="c"><span class="tab" style="background:#FF3F3F"></span>13:20<b>S1 A5</b></div><div class="c"><span class="tab" style="background:#E96A2B"></span>13:20<b>Higher</b></div><div class="c"><span class="tab" style="background:#FA4CD9"></span>13:20<b>S4 A1</b></div>
+</div>
+</main>
+<aside class="panel">
+<div class="lab">MON 2 NOV · PERIOD 4 · 11:40–12:30</div>
+<div class="code"><i></i><b>S4 A1</b></div>
+<div class="meta">Mon P4 · Tue P1–2 · Fri P5</div>
+<div><div class="lab">THIS LESSON</div><div class="note">Finish poetry analysis, Q4–6. Collect homework jotters. Tom and Aisha off for SQA briefing.</div><div class="saved">Saved</div></div>
+<div><div class="lab">CLASS NOTE</div><div class="note" style="min-height:100px">Prelim 14 Jan. Seat Ryan at front. Four still owe folio drafts.</div></div>
+<div class="log"><div class="lab">LAST LESSONS</div><div>Fri 30 Oct · P5 — Started Hughes, read aloud</div><div>Tue 27 Oct · P1–2 — Folio drafting session</div></div>
+</aside>
+</body></html>

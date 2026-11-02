@@ -1,0 +1,50 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Jotter</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;font-family:'Public Sans',sans-serif;color:#1C1C1C;background:#fff;display:grid;grid-template-rows:64px 1fr}
+header{background:#3E6FB5;color:#fff;display:flex;align-items:center;gap:36px;padding:0 32px;font-size:15px}
+header b{font-weight:800;font-size:20px;margin-right:24px}
+header a.on{border-bottom:3px solid #fff;padding-bottom:4px}
+main{display:grid;grid-template-columns:1fr 500px}
+.wk{padding:26px 32px}
+h1{font-size:30px;font-weight:800;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:56px repeat(5,1fr);gap:8px}
+.dh{font-weight:600;font-size:15px;padding:4px 2px}
+.p{font-weight:800;font-size:22px;color:#3E6FB5;padding-top:14px}
+.j{height:78px;border-radius:4px;padding:8px 10px;font-size:12px;position:relative}
+.j b{display:block;font-size:18px;font-weight:800;margin-top:4px}
+.j .lb{position:absolute;right:8px;top:8px;width:46px;height:22px;border:1.5px solid currentColor;border-radius:2px;opacity:.7}
+.free{border:1.5px dashed #BFD3EA;color:#5A6B82}
+.now{box-shadow:0 0 0 3px #1C1C1C}
+.gap{grid-column:1/-1;font-size:12px;font-weight:600;color:#5A6B82;letter-spacing:.06em;padding:2px 64px}
+.page{border-left:1px solid #BFD3EA;padding:26px 30px;background:#fff}
+.cover{background:#FA4CD9;border-radius:6px;padding:20px;color:#3a0833}
+.box{background:#fff;border:2px solid #1C1C1C;padding:12px 14px;font-size:14px;line-height:2;color:#1C1C1C}
+.box div{border-bottom:1px solid #1C1C1C;display:flex;gap:10px}
+.box span{font-weight:600;width:70px}
+.ruled{margin-top:18px;background:repeating-linear-gradient(#fff 0 31px,#BFD3EA 31px 32px);border-left:none;position:relative;padding-left:76px;font-size:16px;line-height:32px;min-height:330px}
+.ruled:before{content:"";position:absolute;left:64px;top:0;bottom:0;width:2px;background:#E04848}
+.ruled em{position:absolute;left:0;font-style:normal;font-size:12px;font-weight:600;color:#E04848}
+</style></head><body>
+<header><b>Harris timetable</b><a>Today</a><a class="on">Week</a><a>Classes</a><a>Settings</a></header>
+<main>
+<section class="wk">
+<h1>Week of 2 November</h1>
+<div class="grid">
+<div></div><div class="dh">Mon 2</div><div class="dh">Tue 3</div><div class="dh">Wed 4</div><div class="dh">Thu 5</div><div class="dh">Fri 6</div>
+<div class="p">1</div><div class="j" style="background:#E7E9EE">8:55<b>S1 Cb Lit</b><i class="lb"></i></div><div class="j" style="background:#FA4CD9;color:#3a0833">8:55<b>S4 A1</b><i class="lb"></i></div><div class="j" style="background:#A6A6A6">8:55<b>S3 A2</b><i class="lb"></i></div><div class="j" style="background:#FF3F3F;color:#fff">8:55<b>S1 A5</b><i class="lb"></i></div><div class="j" style="background:#4EA72E;color:#fff">8:55<b>S2 A2</b><i class="lb"></i></div>
+<div class="p">2</div><div class="j free">9:45<b>Free</b></div><div class="j" style="background:#FA4CD9;color:#3a0833">9:45<b>S4 A1</b><i class="lb"></i></div><div class="j" style="background:#FFFF00">9:45<b>S2 B3</b><i class="lb"></i></div><div class="j" style="background:#7030A0;color:#fff">9:45<b>S1 B5</b><i class="lb"></i></div><div class="j" style="background:#FF3F3F;color:#fff">9:45<b>S1 A5</b><i class="lb"></i></div>
+<div class="gap">INTERVAL</div>
+<div class="p">3</div><div class="j now" style="background:#4EA72E;color:#fff">10:50 · now<b>S2 A2</b><i class="lb"></i></div><div class="j" style="background:#FF3F3F;color:#fff">10:50<b>S1 A5</b><i class="lb"></i></div><div class="j" style="background:#7030A0;color:#fff">10:50<b>S1 B5</b><i class="lb"></i></div><div class="j" style="background:#00B0F0">10:35<b>S4 B4</b><i class="lb"></i></div><div class="j free">10:50<b>Free</b></div>
+<div class="p">4</div><div class="j" style="background:#FA4CD9;color:#3a0833">11:40<b>S4 A1</b><i class="lb"></i></div><div class="j" style="background:#FFFF00">11:40<b>S2 B3</b><i class="lb"></i></div><div class="j free">11:40<b>Free</b></div><div class="j" style="background:#00B0F0">11:40<b>S4 B4</b><i class="lb"></i></div><div class="j" style="background:#FFFF00">11:40<b>S2 B3</b><i class="lb"></i></div>
+<div class="p">5</div><div class="j free">12:30<b>Free</b></div><div class="j" style="background:#4EA72E;color:#fff">12:30<b>S2 A2</b><i class="lb"></i></div><div class="j" style="background:#FF3F3F;color:#fff">13:20<b>S1 A5</b><i class="lb"></i></div><div class="j" style="background:#E96A2B">13:20<b>Higher</b><i class="lb"></i></div><div class="j" style="background:#FA4CD9;color:#3a0833">13:20<b>S4 A1</b><i class="lb"></i></div>
+</div>
+</section>
+<section class="page">
+<div class="cover"><div class="box"><div><span>Class</span>S4 A1</div><div><span>Lesson</span>Mon 2 Nov · P4 · 11:40–12:30</div><div><span>Meets</span>Mon P4 · Tue P1–2 · Fri P5</div></div></div>
+<div class="ruled"><em style="top:0">2 Nov</em>Finish poetry analysis, Q4–6.<br>Collect homework jotters.<br><em style="top:96px">30 Oct</em>Started Hughes, read aloud.<br>Four still owe folio drafts.<br><em style="top:160px">27 Oct</em>Folio drafting session.</div>
+</section>
+</main>
+</body></html>

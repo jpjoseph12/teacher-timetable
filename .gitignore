@@ -1,0 +1,8 @@
+node_modules/
+data/
+data-dev/
+.impeccable/review/
+.impeccable/live/
+.impeccable/*.local.json
+.claude/settings.local.json
+.impeccable/hook.cache.json

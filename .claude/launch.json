@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "timetable",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["server/index.js"],
+      "port": 8091,
+      "env": { "APP_PASSWORD": "test", "PORT": "8091", "DATA_DIR": "data-dev" }
+    }
+  ]
+}

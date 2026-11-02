@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Departures</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Inter+Tight:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;background:#8A8F98;font-family:'Inter Tight',sans-serif;display:grid;grid-template-columns:1fr 480px;gap:20px;padding:20px}
+.board{background:#121212;border-radius:6px;padding:28px 32px;color:#F2F2F2}
+.hd{display:flex;justify-content:space-between;align-items:baseline;font-family:Oswald;margin-bottom:22px}
+.hd b{font-size:40px;letter-spacing:.06em}
+.hd span{font-size:28px;color:#F5A623}
+nav{display:flex;gap:28px;font-size:14px;color:#B8BCC4;margin-bottom:22px}
+nav a.on{color:#F2F2F2;border-bottom:2px solid #F5A623}
+.row{display:grid;grid-template-columns:150px 90px 1fr 1fr;gap:8px;align-items:center;padding:7px 0;border-bottom:1px solid #2A2A2A;font-family:Oswald;font-size:30px;letter-spacing:.05em}
+.row.h{font-family:'Inter Tight';font-size:12px;color:#B8BCC4;letter-spacing:.1em}
+.cells{display:flex;gap:3px}
+.cells i{font-style:normal;background:#1E1E1E;border-radius:3px;padding:2px 6px;border-top:1px solid #333}
+.sw{display:inline-block;width:10px;height:30px;margin-right:12px;vertical-align:middle}
+.now{background:#2a1f0b}.now .t{color:#F5A623}
+.dimr{color:#8A8F98;font-size:22px}
+.note{font-family:'Inter Tight';font-size:15px;color:#B8BCC4;letter-spacing:0}
+.panel{background:#ECEDEF;border-radius:6px;padding:26px;display:flex;flex-direction:column;gap:14px;color:#121212}
+.panel h2{font-family:Oswald;font-size:40px;letter-spacing:.04em}
+.lab{font-size:12px;letter-spacing:.1em;color:#4A4E56}
+.ta{background:#fff;border:1px solid #C5C8CE;border-radius:6px;padding:14px;font-size:16px;line-height:1.6;min-height:140px}
+</style></head><body>
+<section class="board">
+<div class="hd"><b>TODAY · MON 2 NOV</b><span>10:58</span></div>
+<nav><a class="on">Today</a><a>Week</a><a>Classes</a><a>Settings</a></nav>
+<div class="row h"><div>TIME</div><div>PERIOD</div><div>CLASS</div><div>NOTE</div></div>
+<div class="row dimr"><div>08:55</div><div>P1</div><div><span class="sw" style="background:#B8BCCB"></span>S1 CB LIT</div><div class="note">Done</div></div>
+<div class="row dimr"><div>09:45</div><div>P2</div><div>FREE</div><div class="note"></div></div>
+<div class="row now"><div class="t cells"><i>1</i><i>0</i><i>:</i><i>5</i><i>0</i></div><div>P3</div><div><span class="sw" style="background:#4EA72E"></span>S2 A2</div><div class="note">Now · 42 min left</div></div>
+<div class="row"><div>11:40</div><div>P4</div><div><span class="sw" style="background:#FA4CD9"></span>S4 A1</div><div class="note">Collect homework jotters</div></div>
+<div class="row"><div>12:30</div><div>P5</div><div>FREE</div><div class="note"></div></div>
+<div class="row dimr"><div>13:20</div><div>—</div><div>LUNCH</div><div class="note"></div></div>
+<div class="row"><div>14:10</div><div>P6</div><div><span class="sw" style="background:#FFFF00"></span>S2 B3</div><div class="note"></div></div>
+<div class="row"><div>15:00</div><div>P7</div><div>FREE</div><div class="note"></div></div>
+</section>
+<aside class="panel">
+<div class="lab">MON 2 NOV · P3 · 10:50–11:40</div>
+<h2>S2 A2</h2>
+<div class="lab">THIS LESSON</div><div class="ta">Fractions recap, then exit ticket. Seating plan v2.</div>
+<div class="lab">CLASS NOTE</div><div class="ta">Watch the back row. Parents' evening 19 Nov.</div>
+</aside>
+</body></html>

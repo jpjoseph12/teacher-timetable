@@ -1,0 +1,75 @@
+{
+  "classes": [
+    { "id": "s1-cb-lit", "code": "S1 Cb Lit", "band": "bge", "color": "#C9CDD6" },
+    { "id": "s1-a5", "code": "S1 A5", "band": "bge", "color": "#FF3F3F" },
+    { "id": "s1-b5", "code": "S1 B5", "band": "bge", "color": "#7030A0" },
+    { "id": "s2-a2", "code": "S2 A2", "band": "bge", "color": "#4EA72E" },
+    { "id": "s2-b3", "code": "S2 B3", "band": "bge", "color": "#FFFF00" },
+    { "id": "s3-a2", "code": "S3 A2", "band": "bge", "color": "#A6A6A6" },
+    { "id": "s4-a1", "code": "S4 A1", "band": "senior", "color": "#FA4CD9" },
+    { "id": "s4-b4", "code": "S4 B4", "band": "senior", "color": "#00B0F0" },
+    { "id": "higher", "code": "Higher", "band": "senior", "color": "#E96A2B" }
+  ],
+  "slots": {
+    "mon": [ "s1-cb-lit", null, "s2-a2", "s4-a1", null, "s2-b3", null ],
+    "tue": [ "s4-a1", "s4-a1", "s1-a5", "s2-b3", "s2-a2", "higher", null ],
+    "wed": [ "s3-a2", "s2-b3", "s1-b5", null, "s1-a5", "s2-a2" ],
+    "thu": [ "s1-a5", "s1-b5", "s4-b4", "s4-b4", "higher", "higher" ],
+    "fri": [ "s2-a2", "s1-a5", null, "s2-b3", "s4-a1", "s4-b4" ]
+  },
+  "bells": {
+    "weekdays": { "mon": "long", "tue": "long", "wed": "short", "thu": "short", "fri": "short" },
+    "dayTypes": {
+      "long": {
+        "bge": [
+          { "kind": "break", "label": "Personal Support", "start": "08:45", "end": "08:55" },
+          { "kind": "period", "period": 1, "start": "08:55", "end": "09:45" },
+          { "kind": "period", "period": 2, "start": "09:45", "end": "10:35" },
+          { "kind": "break", "label": "Interval", "start": "10:35", "end": "10:50" },
+          { "kind": "period", "period": 3, "start": "10:50", "end": "11:40" },
+          { "kind": "period", "period": 4, "start": "11:40", "end": "12:30" },
+          { "kind": "period", "period": 5, "start": "12:30", "end": "13:20" },
+          { "kind": "break", "label": "Lunch", "start": "13:20", "end": "14:10" },
+          { "kind": "period", "period": 6, "start": "14:10", "end": "15:00" },
+          { "kind": "period", "period": 7, "start": "15:00", "end": "15:50" }
+        ],
+        "senior": [
+          { "kind": "break", "label": "Personal Support", "start": "08:45", "end": "08:55" },
+          { "kind": "period", "period": 1, "start": "08:55", "end": "09:45" },
+          { "kind": "period", "period": 2, "start": "09:45", "end": "10:35" },
+          { "kind": "period", "period": 3, "start": "10:35", "end": "11:25" },
+          { "kind": "break", "label": "Interval", "start": "11:25", "end": "11:40" },
+          { "kind": "period", "period": 4, "start": "11:40", "end": "12:30" },
+          { "kind": "period", "period": 5, "start": "12:30", "end": "13:20" },
+          { "kind": "break", "label": "Lunch", "start": "13:20", "end": "14:10" },
+          { "kind": "period", "period": 6, "start": "14:10", "end": "15:00" },
+          { "kind": "period", "period": 7, "start": "15:00", "end": "15:50" }
+        ]
+      },
+      "short": {
+        "bge": [
+          { "kind": "break", "label": "Personal Support", "start": "08:45", "end": "08:55" },
+          { "kind": "period", "period": 1, "start": "08:55", "end": "09:45" },
+          { "kind": "period", "period": 2, "start": "09:45", "end": "10:35" },
+          { "kind": "break", "label": "Interval", "start": "10:35", "end": "10:50" },
+          { "kind": "period", "period": 3, "start": "10:50", "end": "11:40" },
+          { "kind": "period", "period": 4, "start": "11:40", "end": "12:30" },
+          { "kind": "break", "label": "Lunch", "start": "12:30", "end": "13:20" },
+          { "kind": "period", "period": 5, "start": "13:20", "end": "14:10" },
+          { "kind": "period", "period": 6, "start": "14:10", "end": "15:00" }
+        ],
+        "senior": [
+          { "kind": "break", "label": "Personal Support", "start": "08:45", "end": "08:55" },
+          { "kind": "period", "period": 1, "start": "08:55", "end": "09:45" },
+          { "kind": "period", "period": 2, "start": "09:45", "end": "10:35" },
+          { "kind": "period", "period": 3, "start": "10:35", "end": "11:25" },
+          { "kind": "break", "label": "Interval", "start": "11:25", "end": "11:40" },
+          { "kind": "period", "period": 4, "start": "11:40", "end": "12:30" },
+          { "kind": "break", "label": "Lunch", "start": "12:30", "end": "13:20" },
+          { "kind": "period", "period": 5, "start": "13:20", "end": "14:10" },
+          { "kind": "period", "period": 6, "start": "14:10", "end": "15:00" }
+        ]
+      }
+    }
+  }
+}

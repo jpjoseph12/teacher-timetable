@@ -1,0 +1,109 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned the teacher's week-to-view planner. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "Week-to-view planner",
+      "kicker": "THE ROLL",
+      "lineage": "The A4 teacher's planner: cloth cover, week-to-view spread, ribbon marker",
+      "thesis": "Your timetable as the planner you'd buy every August, with a ribbon on now.",
+      "palette": ["#2340A8", "#FFFFFF", "#15182B", "#D9DEE8", "#D7263D"],
+      "materials": ["cobalt bookcloth rail", "ruled white pages", "coloured edge tabs per class", "red ribbon marker"],
+      "viewport": "Cobalt cloth side rail; ruled period rows across five day columns, lessons carrying class-colour edge tabs, a red ribbon down today's column to now.",
+      "risk": "Planner furniture can tip into costume if the ruling gets heavier than the data.",
+      "raised": [
+        {"from": "challenger-star-atlas", "raise": "Today steps down a fixed size ramp: now, next, later."},
+        {"from": "challenger-zoo-map", "raise": "One region dominates each screen: the open lesson owns its half."},
+        {"from": "challenger-emigre", "raise": "The class code is one form at every scale: tab, cell, page title."},
+        {"from": "challenger-streaming-wall", "raise": "Opening a lesson dims the rest of the week."},
+        {"from": "challenger-saville", "raise": "Period numbers are the index, set large and tabular at the head of every row."}
+      ],
+      "html": ".impeccable/mocks/decision/assigned.html"
+    },
+    {
+      "id": "model-pick",
+      "kind": "pick",
+      "label": "Jotter covers",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Scottish school jotters: coloured covers, printed label box, feint ruling and red margin",
+      "thesis": "Every class is a jotter in its own colour; notes go on the feint lines inside.",
+      "palette": ["#3E6FB5", "#FFFFFF", "#1C1C1C", "#BFD3EA", "#E04848"],
+      "materials": ["jotter-cover colour fields", "printed Name/Class/Subject label box", "feint ruling", "red margin line"],
+      "viewport": "Week grid on white, each lesson a small jotter-cover block; the open class shows its label box and notes on feint lines with dates in the red margin.",
+      "risk": "The most familiar school-stationery reading; feint ruling can feel like dress-up.",
+      "html": ".impeccable/mocks/decision/model-pick.html"
+    },
+    {
+      "id": "challenger-split-flap",
+      "kind": "challenger",
+      "catalogId": "signals-instruments-split-flap-concourse",
+      "label": "Departures board",
+      "verdict": "competitive",
+      "lineage": "Rail concourse split-flap board",
+      "thesis": "Today is a departures board: every period a row, now in amber.",
+      "palette": ["#121212", "#F2F2F2", "#F5A623", "#8A8F98"],
+      "materials": ["matte black flap cells", "condensed white caps", "amber row lamp", "brushed steel frame"],
+      "viewport": "Black board with fixed columns time, period, class, note; amber lamp on the current row; notes open in a steel-framed panel.",
+      "case": "Wins clarity for now and next; loses on audience, since teachers don't see their day as a station.",
+      "risk": "A black board is heavy for writing long notes.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-split-flap-concourse-hero.webp",
+      "html": ".impeccable/mocks/decision/challenger-split-flap.html"
+    },
+    {
+      "id": "challenger-star-atlas", "kind": "challenger", "catalogId": "notation-diagram-systems-star-atlas",
+      "label": "Star atlas", "verdict": "declined", "lineage": "Celestial star charts",
+      "thesis": "Lessons as stars sized by importance.", "palette": ["#0E1A3A", "#F4F1E8", "#E0533A"],
+      "materials": ["navy chart ground", "magnitude dots"], "viewport": "A week plotted as a star field.",
+      "case": "Fuses poorly: a timetable is not a sky.", "kept": "A fixed size ramp carries hierarchy.", "risk": "Unreadable as a timetable.",
+      "hero": "https://impeccable.style/worlds/cards/notation-diagram-systems-star-atlas-hero.webp"
+    },
+    {
+      "id": "challenger-zoo-map", "kind": "challenger", "catalogId": "aww2-zoo-gardens-guide-map",
+      "label": "Zoo guide map", "verdict": "declined", "lineage": "Flat-colour park guide maps",
+      "thesis": "Each class a coloured lobe of land.", "palette": ["#8ED462", "#F5F1E4", "#2C2E2A", "#F5E211"],
+      "materials": ["flat colour lobes", "capsule labels"], "viewport": "The week as a map of class islands.",
+      "case": "Fuses poorly: periods are a grid, not a coastline.", "kept": "One region dominates each screen.", "risk": "Breaks the grid teachers read.",
+      "hero": "https://impeccable.style/worlds/cards/aww2-zoo-gardens-guide-map-hero.webp"
+    },
+    {
+      "id": "challenger-emigre", "kind": "challenger", "catalogId": "emigre-bitmap-specimen",
+      "label": "Bitmap specimen", "verdict": "declined", "lineage": "Emigre type specimens",
+      "thesis": "Class codes as pixel display type.", "palette": ["#FFFFFF", "#000000", "#FF3B00"],
+      "materials": ["pixel letterforms", "halftone"], "viewport": "Huge pixel class code over dense columns.",
+      "case": "Fuses poorly: no tie to school life.", "kept": "One form repeated at every scale.", "risk": "Novelty over task.",
+      "hero": "https://impeccable.style/worlds/cards/emigre-bitmap-specimen-hero.webp"
+    },
+    {
+      "id": "challenger-streaming-wall", "kind": "challenger", "catalogId": "pop-culture-shelf-streaming-title-card-wall",
+      "label": "Streaming wall", "verdict": "declined", "lineage": "Streaming title-card rows",
+      "thesis": "Classes as rows of poster tiles.", "palette": ["#141414", "#E5E5E5", "#E50914"],
+      "materials": ["poster tiles", "row dimming"], "viewport": "Rows of lessons per class, focus expands.",
+      "case": "Fuses poorly: a week is days by periods, not rows of content.", "kept": "Focus dims everything else.", "risk": "Hides the grid.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-streaming-title-card-wall-hero.webp"
+    },
+    {
+      "id": "challenger-saville", "kind": "challenger", "catalogId": "brand-identity-canon-saville-catalog-sleeve",
+      "label": "Catalog sleeve", "verdict": "declined", "lineage": "Factory Records catalog identity",
+      "thesis": "Everything numbered; colour codes stand in for names.", "palette": ["#111111", "#FFFFFF", "#E2B13C"],
+      "materials": ["matte black", "colour-code strips"], "viewport": "Period numbers as the only headlines.",
+      "case": "Fuses poorly: hiding class names hurts a glance.", "kept": "One numbering system is the index.", "risk": "Too coded to read fast.",
+      "hero": "https://impeccable.style/worlds/cards/brand-identity-canon-saville-catalog-sleeve-hero.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code", "toggle": false},
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "The category standard",
+    "thesis": "A clean calendar-app week view, executed impeccably.",
+    "palette": ["#FFFFFF", "#111827", "#2563EB", "#F3F4F6"],
+    "materials": ["white grid", "soft class-colour blocks", "blue now line"],
+    "viewport": "Top bar with week switcher, white day-by-period grid with tinted class blocks, blue now line, right-hand notes drawer.",
+    "risk": "Looks like every calendar app by design.",
+    "html": ".impeccable/mocks/decision/canon.html"
+  },
+  "steer": true
+}
