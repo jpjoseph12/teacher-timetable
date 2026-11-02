@@ -1,0 +1,605 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-02T19:56:28.182Z",
+  "title": "Design System: Harris timetable",
+  "extensions": {
+    "colorMeta": {
+      "cloth": {
+        "role": "primary",
+        "displayName": "Cobalt Bookcloth",
+        "canonical": "#2340A8",
+        "tonalRamp": [
+          "oklch(15.0% 0.064 266.7)",
+          "oklch(26.4% 0.095 266.7)",
+          "oklch(37.9% 0.125 266.7)",
+          "oklch(49.3% 0.155 266.7)",
+          "oklch(60.7% 0.155 266.7)",
+          "oklch(72.1% 0.125 266.7)",
+          "oklch(83.6% 0.095 266.7)",
+          "oklch(95.0% 0.064 266.7)"
+        ]
+      },
+      "cloth-deep": {
+        "role": "primary",
+        "displayName": "Deep Cloth",
+        "canonical": "#1A3088",
+        "tonalRamp": [
+          "oklch(15.0% 0.056 267.2)",
+          "oklch(26.4% 0.083 267.2)",
+          "oklch(37.9% 0.109 267.2)",
+          "oklch(49.3% 0.136 267.2)",
+          "oklch(60.7% 0.136 267.2)",
+          "oklch(72.1% 0.109 267.2)",
+          "oklch(83.6% 0.083 267.2)",
+          "oklch(95.0% 0.056 267.2)"
+        ]
+      },
+      "cloth-ink": {
+        "role": "primary",
+        "displayName": "Cloth Ink",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 0)",
+          "oklch(26.4% 0.000 0)",
+          "oklch(37.9% 0.000 0)",
+          "oklch(49.3% 0.000 0)",
+          "oklch(60.7% 0.000 0)",
+          "oklch(72.1% 0.000 0)",
+          "oklch(83.6% 0.000 0)",
+          "oklch(95.0% 0.000 0)"
+        ]
+      },
+      "cloth-soft": {
+        "role": "primary",
+        "displayName": "Faded Cloth Lettering",
+        "canonical": "#C3CEF5",
+        "tonalRamp": [
+          "oklch(15.0% 0.021 272.8)",
+          "oklch(26.4% 0.031 272.8)",
+          "oklch(37.9% 0.041 272.8)",
+          "oklch(49.3% 0.051 272.8)",
+          "oklch(60.7% 0.051 272.8)",
+          "oklch(72.1% 0.041 272.8)",
+          "oklch(83.6% 0.031 272.8)",
+          "oklch(95.0% 0.021 272.8)"
+        ]
+      },
+      "page": {
+        "role": "neutral",
+        "displayName": "Page White",
+        "canonical": "#FFFFFF",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 0)",
+          "oklch(26.4% 0.000 0)",
+          "oklch(37.9% 0.000 0)",
+          "oklch(49.3% 0.000 0)",
+          "oklch(60.7% 0.000 0)",
+          "oklch(72.1% 0.000 0)",
+          "oklch(83.6% 0.000 0)",
+          "oklch(95.0% 0.000 0)"
+        ]
+      },
+      "band": {
+        "role": "neutral",
+        "displayName": "Ruled Band",
+        "canonical": "#F4F6FA",
+        "tonalRamp": [
+          "oklch(15.0% 0.002 264.5)",
+          "oklch(26.4% 0.003 264.5)",
+          "oklch(37.9% 0.004 264.5)",
+          "oklch(49.3% 0.005 264.5)",
+          "oklch(60.7% 0.005 264.5)",
+          "oklch(72.1% 0.004 264.5)",
+          "oklch(83.6% 0.003 264.5)",
+          "oklch(95.0% 0.002 264.5)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "#D9DEE8",
+        "tonalRamp": [
+          "oklch(15.0% 0.006 264.5)",
+          "oklch(26.4% 0.008 264.5)",
+          "oklch(37.9% 0.011 264.5)",
+          "oklch(49.3% 0.013 264.5)",
+          "oklch(60.7% 0.013 264.5)",
+          "oklch(72.1% 0.011 264.5)",
+          "oklch(83.6% 0.008 264.5)",
+          "oklch(95.0% 0.006 264.5)"
+        ]
+      },
+      "rule-strong": {
+        "role": "neutral",
+        "displayName": "Strong Rule",
+        "canonical": "#B4BCCD",
+        "tonalRamp": [
+          "oklch(15.0% 0.010 265.6)",
+          "oklch(26.4% 0.014 265.6)",
+          "oklch(37.9% 0.019 265.6)",
+          "oklch(49.3% 0.023 265.6)",
+          "oklch(60.7% 0.023 265.6)",
+          "oklch(72.1% 0.019 265.6)",
+          "oklch(83.6% 0.014 265.6)",
+          "oklch(95.0% 0.010 265.6)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Planner Ink",
+        "canonical": "#15182B",
+        "tonalRamp": [
+          "oklch(15.0% 0.014 276.0)",
+          "oklch(26.4% 0.021 276.0)",
+          "oklch(37.9% 0.028 276.0)",
+          "oklch(49.3% 0.034 276.0)",
+          "oklch(60.7% 0.034 276.0)",
+          "oklch(72.1% 0.028 276.0)",
+          "oklch(83.6% 0.021 276.0)",
+          "oklch(95.0% 0.014 276.0)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Second Ink",
+        "canonical": "#464B62",
+        "tonalRamp": [
+          "oklch(15.0% 0.015 275.1)",
+          "oklch(26.4% 0.022 275.1)",
+          "oklch(37.9% 0.029 275.1)",
+          "oklch(49.3% 0.035 275.1)",
+          "oklch(60.7% 0.035 275.1)",
+          "oklch(72.1% 0.029 275.1)",
+          "oklch(83.6% 0.022 275.1)",
+          "oklch(95.0% 0.015 275.1)"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Pencil",
+        "canonical": "#5A6078",
+        "tonalRamp": [
+          "oklch(15.0% 0.015 273.9)",
+          "oklch(26.4% 0.022 273.9)",
+          "oklch(37.9% 0.029 273.9)",
+          "oklch(49.3% 0.036 273.9)",
+          "oklch(60.7% 0.036 273.9)",
+          "oklch(72.1% 0.029 273.9)",
+          "oklch(83.6% 0.022 273.9)",
+          "oklch(95.0% 0.015 273.9)"
+        ]
+      },
+      "ribbon": {
+        "role": "secondary",
+        "displayName": "Ribbon Red",
+        "canonical": "#D7263D",
+        "tonalRamp": [
+          "oklch(15.0% 0.079 21.1)",
+          "oklch(26.4% 0.116 21.1)",
+          "oklch(37.9% 0.153 21.1)",
+          "oklch(49.3% 0.190 21.1)",
+          "oklch(60.7% 0.190 21.1)",
+          "oklch(72.1% 0.153 21.1)",
+          "oklch(83.6% 0.116 21.1)",
+          "oklch(95.0% 0.079 21.1)"
+        ]
+      },
+      "ribbon-deep": {
+        "role": "secondary",
+        "displayName": "Deep Ribbon",
+        "canonical": "#A8172B",
+        "tonalRamp": [
+          "oklch(15.0% 0.067 21.5)",
+          "oklch(26.4% 0.098 21.5)",
+          "oklch(37.9% 0.129 21.5)",
+          "oklch(49.3% 0.161 21.5)",
+          "oklch(60.7% 0.161 21.5)",
+          "oklch(72.1% 0.129 21.5)",
+          "oklch(83.6% 0.098 21.5)",
+          "oklch(95.0% 0.067 21.5)"
+        ]
+      },
+      "ok": {
+        "role": "neutral",
+        "displayName": "Saved Green",
+        "canonical": "#24724A",
+        "tonalRamp": [
+          "oklch(15.0% 0.038 157.0)",
+          "oklch(26.4% 0.055 157.0)",
+          "oklch(37.9% 0.073 157.0)",
+          "oklch(49.3% 0.091 157.0)",
+          "oklch(60.7% 0.091 157.0)",
+          "oklch(72.1% 0.073 157.0)",
+          "oklch(83.6% 0.055 157.0)",
+          "oklch(95.0% 0.038 157.0)"
+        ]
+      },
+      "warn": {
+        "role": "neutral",
+        "displayName": "Warning Rust",
+        "canonical": "#A64B12",
+        "tonalRamp": [
+          "oklch(15.0% 0.051 46.8)",
+          "oklch(26.4% 0.076 46.8)",
+          "oklch(37.9% 0.100 46.8)",
+          "oklch(49.3% 0.124 46.8)",
+          "oklch(60.7% 0.124 46.8)",
+          "oklch(72.1% 0.100 46.8)",
+          "oklch(83.6% 0.076 46.8)",
+          "oklch(95.0% 0.051 46.8)"
+        ]
+      },
+      "class-s4-a1": {
+        "role": "tertiary",
+        "displayName": "S4 A1 Magenta",
+        "canonical": "#FA4CD9",
+        "tonalRamp": [
+          "oklch(15.0% 0.095 336.6)",
+          "oklch(26.4% 0.140 336.6)",
+          "oklch(37.9% 0.185 336.6)",
+          "oklch(49.3% 0.230 336.6)",
+          "oklch(60.7% 0.230 336.6)",
+          "oklch(72.1% 0.185 336.6)",
+          "oklch(83.6% 0.140 336.6)",
+          "oklch(95.0% 0.095 336.6)"
+        ]
+      },
+      "class-s1-a5": {
+        "role": "tertiary",
+        "displayName": "S1 A5 Red",
+        "canonical": "#FF3F3F",
+        "tonalRamp": [
+          "oklch(15.0% 0.086 26.1)",
+          "oklch(26.4% 0.126 26.1)",
+          "oklch(37.9% 0.167 26.1)",
+          "oklch(49.3% 0.207 26.1)",
+          "oklch(60.7% 0.207 26.1)",
+          "oklch(72.1% 0.167 26.1)",
+          "oklch(83.6% 0.126 26.1)",
+          "oklch(95.0% 0.086 26.1)"
+        ]
+      },
+      "class-s1-b5": {
+        "role": "tertiary",
+        "displayName": "S1 B5 Purple",
+        "canonical": "#7030A0",
+        "tonalRamp": [
+          "oklch(15.0% 0.066 306.9)",
+          "oklch(26.4% 0.097 306.9)",
+          "oklch(37.9% 0.128 306.9)",
+          "oklch(49.3% 0.159 306.9)",
+          "oklch(60.7% 0.159 306.9)",
+          "oklch(72.1% 0.128 306.9)",
+          "oklch(83.6% 0.097 306.9)",
+          "oklch(95.0% 0.066 306.9)"
+        ]
+      },
+      "class-s2-a2": {
+        "role": "tertiary",
+        "displayName": "S2 A2 Green",
+        "canonical": "#4EA72E",
+        "tonalRamp": [
+          "oklch(15.0% 0.067 138.8)",
+          "oklch(26.4% 0.099 138.8)",
+          "oklch(37.9% 0.130 138.8)",
+          "oklch(49.3% 0.162 138.8)",
+          "oklch(60.7% 0.162 138.8)",
+          "oklch(72.1% 0.130 138.8)",
+          "oklch(83.6% 0.099 138.8)",
+          "oklch(95.0% 0.067 138.8)"
+        ]
+      },
+      "class-s2-b3": {
+        "role": "tertiary",
+        "displayName": "S2 B3 Yellow",
+        "canonical": "#FFFF00",
+        "tonalRamp": [
+          "oklch(15.0% 0.080 109.8)",
+          "oklch(26.4% 0.117 109.8)",
+          "oklch(37.9% 0.155 109.8)",
+          "oklch(49.3% 0.192 109.8)",
+          "oklch(60.7% 0.192 109.8)",
+          "oklch(72.1% 0.155 109.8)",
+          "oklch(83.6% 0.117 109.8)",
+          "oklch(95.0% 0.080 109.8)"
+        ]
+      },
+      "class-s3-a2": {
+        "role": "tertiary",
+        "displayName": "S3 A2 Grey",
+        "canonical": "#A6A6A6",
+        "tonalRamp": [
+          "oklch(15.0% 0.000 0)",
+          "oklch(26.4% 0.000 0)",
+          "oklch(37.9% 0.000 0)",
+          "oklch(49.3% 0.000 0)",
+          "oklch(60.7% 0.000 0)",
+          "oklch(72.1% 0.000 0)",
+          "oklch(83.6% 0.000 0)",
+          "oklch(95.0% 0.000 0)"
+        ]
+      },
+      "class-s4-b4": {
+        "role": "tertiary",
+        "displayName": "S4 B4 Cyan",
+        "canonical": "#00B0F0",
+        "tonalRamp": [
+          "oklch(15.0% 0.056 233.7)",
+          "oklch(26.4% 0.083 233.7)",
+          "oklch(37.9% 0.109 233.7)",
+          "oklch(49.3% 0.135 233.7)",
+          "oklch(60.7% 0.135 233.7)",
+          "oklch(72.1% 0.109 233.7)",
+          "oklch(83.6% 0.083 233.7)",
+          "oklch(95.0% 0.056 233.7)"
+        ]
+      },
+      "class-higher": {
+        "role": "tertiary",
+        "displayName": "Higher Orange",
+        "canonical": "#E96A2B",
+        "tonalRamp": [
+          "oklch(15.0% 0.066 43.7)",
+          "oklch(26.4% 0.096 43.7)",
+          "oklch(37.9% 0.127 43.7)",
+          "oklch(49.3% 0.158 43.7)",
+          "oklch(60.7% 0.158 43.7)",
+          "oklch(72.1% 0.127 43.7)",
+          "oklch(83.6% 0.096 43.7)",
+          "oklch(95.0% 0.066 43.7)"
+        ]
+      },
+      "class-s1-cb-lit": {
+        "role": "tertiary",
+        "displayName": "S1 Cb Lit Paper Grey (stand-in; unshaded in source)",
+        "canonical": "#C9CDD6",
+        "tonalRamp": [
+          "oklch(15.0% 0.005 266.7)",
+          "oklch(26.4% 0.007 266.7)",
+          "oklch(37.9% 0.010 266.7)",
+          "oklch(49.3% 0.012 266.7)",
+          "oklch(60.7% 0.012 266.7)",
+          "oklch(72.1% 0.010 266.7)",
+          "oklch(83.6% 0.007 266.7)",
+          "oklch(95.0% 0.005 266.7)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Class code on the now card (64px; 52px on phone)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Lesson panel title (46px); class page title at 56px."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "View headings (40px; 28px in the phone header)."
+      },
+      "code": {
+        "displayName": "Class Code",
+        "purpose": "Class codes, one form at every scale: 15px phone cells to 30px next row."
+      },
+      "period-index": {
+        "displayName": "Period Index",
+        "purpose": "Cobalt period numbers down the week (34px) and day list (26px)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default text with tabular numerals."
+      },
+      "note": {
+        "displayName": "Note",
+        "purpose": "Notes on the 28px planner ruling."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Times, timestamps, save status, rail tab labels."
+      },
+      "band-label": {
+        "displayName": "Band Label",
+        "purpose": "Uppercase break and lunch band names only."
+      }
+    },
+    "shadows": [
+      {
+        "name": "tab-edge",
+        "value": "inset -1px 0 0 rgb(0 0 0 / 0.12)",
+        "purpose": "Visible edge on pale class tabs."
+      },
+      {
+        "name": "ribbon-fold",
+        "value": "1px 0 0 #A8172B",
+        "purpose": "Folded edge of the week ribbon."
+      },
+      {
+        "name": "now-frame",
+        "value": "inset 0 0 0 2px #15182B",
+        "purpose": "Current period cell in the week."
+      },
+      {
+        "name": "field-focus",
+        "value": "0 0 0 3px rgb(35 64 168 / 0.18)",
+        "purpose": "Text field focus ring with a cobalt border."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Shared ease-out for the ribbon drop and focus dimming."
+      },
+      {
+        "name": "ribbon-drop",
+        "value": "scaleY(0) to scaleY(1) from the top, 0.9s, ease",
+        "purpose": "The ribbon arriving on now."
+      },
+      {
+        "name": "focus-dim",
+        "value": "opacity 0.35s ease, to 0.42",
+        "purpose": "Unselected week cells dim when a lesson opens."
+      },
+      {
+        "name": "hover-wash",
+        "value": "background-color 0.2s",
+        "purpose": "Band tint on cell hover."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none; transition: none",
+        "purpose": "Applied to everything under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "narrow-panel",
+        "value": "1180px"
+      },
+      {
+        "name": "stack",
+        "value": "900px"
+      },
+      {
+        "name": "phone",
+        "value": "767px"
+      }
+    ],
+    "focus": {
+      "value": "outline: 3px solid #D7263D; outline-offset: 2px; border-radius: 4px",
+      "purpose": "Global keyboard focus; text fields swap it for a cobalt border and the field-focus ring."
+    },
+    "inkOn": {
+      "source": "public/schedule.js",
+      "purpose": "Returns #14161F or #FFFFFF for text on a class colour, whichever contrasts more. Set as --on on every class-coloured element, but no style reads it: class colour never sits behind text."
+    }
+  },
+  "components": [
+    {
+      "name": "Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Quiet default action: Today, This week, Back, Next meeting.",
+      "html": "<button class=\"ds-btn\">This week</button>",
+      "css": ":host{--cloth:#2340A8;--cloth-deep:#1A3088;--cloth-ink:#FFFFFF;--cloth-soft:#C3CEF5;--page:#FFFFFF;--band:#F4F6FA;--rule:#D9DEE8;--rule-strong:#B4BCCD;--ink:#15182B;--ink-2:#464B62;--ink-3:#5A6078;--ribbon:#D7263D;--ribbon-deep:#A8172B;--ok:#24724A;--warn:#A64B12;--display:\"Barlow Condensed\",\"Arial Narrow\",sans-serif;--text:\"Atkinson Hyperlegible\",system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);}.ds-btn{font:600 15px/1 var(--text);color:var(--ink);background:var(--page);border:1px solid var(--rule-strong);border-radius:8px;padding:9px 14px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}.ds-btn:hover{border-color:var(--ink-3);background:var(--band)}.ds-btn:focus-visible{outline:3px solid var(--ribbon);outline-offset:2px}"
+    },
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The committing action on a form: sign in, save settings.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Save timetable</button>",
+      "css": ":host{--cloth:#2340A8;--cloth-deep:#1A3088;--cloth-ink:#FFFFFF;--cloth-soft:#C3CEF5;--page:#FFFFFF;--band:#F4F6FA;--rule:#D9DEE8;--rule-strong:#B4BCCD;--ink:#15182B;--ink-2:#464B62;--ink-3:#5A6078;--ribbon:#D7263D;--ribbon-deep:#A8172B;--ok:#24724A;--warn:#A64B12;--display:\"Barlow Condensed\",\"Arial Narrow\",sans-serif;--text:\"Atkinson Hyperlegible\",system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);}.ds-btn{font:600 15px/1 var(--text);color:var(--ink);background:var(--page);border:1px solid var(--rule-strong);border-radius:8px;padding:9px 14px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}.ds-btn:hover{border-color:var(--ink-3);background:var(--band)}.ds-btn:focus-visible{outline:3px solid var(--ribbon);outline-offset:2px}.ds-btn-primary{background:var(--cloth);border-color:var(--cloth);color:var(--cloth-ink)}.ds-btn-primary:hover{background:var(--cloth-deep)}"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "button-icon",
+      "description": "Pager arrows and panel close; always labelled.",
+      "html": "<button class=\"ds-btn ds-btn-icon\" aria-label=\"Next week\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m9 18 6-6-6-6\"/></svg></button>",
+      "css": ":host{--cloth:#2340A8;--cloth-deep:#1A3088;--cloth-ink:#FFFFFF;--cloth-soft:#C3CEF5;--page:#FFFFFF;--band:#F4F6FA;--rule:#D9DEE8;--rule-strong:#B4BCCD;--ink:#15182B;--ink-2:#464B62;--ink-3:#5A6078;--ribbon:#D7263D;--ribbon-deep:#A8172B;--ok:#24724A;--warn:#A64B12;--display:\"Barlow Condensed\",\"Arial Narrow\",sans-serif;--text:\"Atkinson Hyperlegible\",system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);}.ds-btn{font:600 15px/1 var(--text);color:var(--ink);background:var(--page);border:1px solid var(--rule-strong);border-radius:8px;padding:9px 14px;display:inline-flex;align-items:center;gap:6px;cursor:pointer}.ds-btn:hover{border-color:var(--ink-3);background:var(--band)}.ds-btn:focus-visible{outline:3px solid var(--ribbon);outline-offset:2px}.ds-btn-icon{padding:8px}"
+    },
+    {
+      "name": "Rail",
+      "kind": "nav",
+      "refersTo": "rail",
+      "description": "Cobalt bookcloth navigation; becomes the bottom tab bar on phone.",
+      "html": "<nav class=\"ds-rail\"><a class=\"ds-mark\" href=\"#\">H</a><a class=\"ds-tab\" href=\"#\" aria-current=\"page\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/></svg><span>Today</span></a><a class=\"ds-tab\" href=\"#\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"4\" width=\"18\" height=\"17\" rx=\"2\"/><path d=\"M16 2v4M8 2v4M3 10h18\"/></svg><span>Week</span></a></nav>",
+      "css": ":host{--cloth:#2340A8;--cloth-deep:#1A3088;--cloth-ink:#FFFFFF;--cloth-soft:#C3CEF5;--page:#FFFFFF;--band:#F4F6FA;--rule:#D9DEE8;--rule-strong:#B4BCCD;--ink:#15182B;--ink-2:#464B62;--ink-3:#5A6078;--ribbon:#D7263D;--ribbon-deep:#A8172B;--ok:#24724A;--warn:#A64B12;--display:\"Barlow Condensed\",\"Arial Narrow\",sans-serif;--text:\"Atkinson Hyperlegible\",system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);}.ds-rail{background:var(--cloth);color:var(--cloth-soft);display:flex;flex-direction:column;align-items:center;gap:6px;padding:20px 0;width:88px;font-family:var(--text)}.ds-mark{color:var(--cloth-ink);font:700 28px var(--display);margin-bottom:18px;text-decoration:none}.ds-tab{display:flex;flex-direction:column;align-items:center;gap:4px;width:72px;padding:10px 0;font-size:13px;text-decoration:none;border-radius:8px;color:var(--cloth-soft)}.ds-tab:hover,.ds-tab[aria-current=page]{color:var(--cloth-ink);background:var(--cloth-deep)}.ds-tab:focus-visible{outline:3px solid var(--ribbon);outline-offset:2px}"
+    },
+    {
+      "name": "Lesson Cell",
+      "kind": "custom",
+      "refersTo": "week-cell",
+      "description": "Ruled week cell with the class colour as an edge tab; rest, now, selected and free states.",
+      "html": "<div class=\"ds-week\"><a class=\"ds-cell ds-tabbed\" style=\"--c:#4EA72E\" href=\"#\"><span class=\"ds-t\">8:55</span><span class=\"ds-code\">S2 A2</span></a><a class=\"ds-cell ds-tabbed ds-now\" style=\"--c:#FFFF00\" href=\"#\"><span class=\"ds-t\">9:45</span><span class=\"ds-code\">S2 B3</span></a><a class=\"ds-cell ds-tabbed ds-selected\" style=\"--c:#E96A2B\" href=\"#\"><span class=\"ds-t\">10:50</span><span class=\"ds-code\">Higher</span></a><a class=\"ds-cell ds-free\" href=\"#\"><span class=\"ds-t\">11:40</span><span class=\"ds-code\">Free</span></a></div>",
+      "css": ":host{--cloth:#2340A8;--cloth-deep:#1A3088;--cloth-ink:#FFFFFF;--cloth-soft:#C3CEF5;--page:#FFFFFF;--band:#F4F6FA;--rule:#D9DEE8;--rule-strong:#B4BCCD;--ink:#15182B;--ink-2:#464B62;--ink-3:#5A6078;--ribbon:#D7263D;--ribbon-deep:#A8172B;--ok:#24724A;--warn:#A64B12;--display:\"Barlow Condensed\",\"Arial Narrow\",sans-serif;--text:\"Atkinson Hyperlegible\",system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);}.ds-tabbed{position:relative}.ds-tabbed::before{content:\"\";position:absolute;left:-1px;top:8px;bottom:8px;width:7px;background:var(--c,transparent);border-radius:0 3px 3px 0;box-shadow:inset -1px 0 0 rgb(0 0 0 / 0.12)}.ds-week{display:grid;grid-template-columns:repeat(4,160px);border-top:2px solid var(--ink);font-family:var(--text);font-variant-numeric:tabular-nums}.ds-cell{display:block;border-bottom:1px solid var(--rule);border-left:1px solid var(--rule);min-height:82px;padding:9px 12px 9px 16px;text-decoration:none;color:var(--ink-2);font-size:13px;background:var(--page);transition:background-color .2s}.ds-cell:hover{background:var(--band)}.ds-cell:focus-visible{outline:3px solid var(--ribbon);outline-offset:2px}.ds-code{display:block;font:700 21px var(--display);letter-spacing:.01em;color:var(--ink);margin-top:1px}.ds-now{box-shadow:inset 0 0 0 2px var(--ink)}.ds-selected{background:color-mix(in srgb,var(--c) 12%,white)}.ds-free{color:var(--ink-3);background:repeating-linear-gradient(180deg,transparent 0 15px,#EEF1F6 15px 16px)}.ds-free .ds-code{color:var(--ink-3);font-weight:600}"
+    },
+    {
+      "name": "Now Card",
+      "kind": "card",
+      "refersTo": "now-card",
+      "description": "Top of the Today ramp: ribbon-marked current lesson with the next one beneath.",
+      "html": "<section class=\"ds-nowcard ds-tabbed\" style=\"--c:#FA4CD9\"><span class=\"ds-ribbon-mark\"></span><h2 class=\"ds-h\">S4 A1</h2><p class=\"ds-when\">Period 3 · 10:35–11:25</p><p class=\"ds-then\">Then <span class=\"ds-then-code ds-tabbed\" style=\"--c:#00B0F0\">S4 B4</span> at 11:40</p></section>",
+      "css": ":host{--cloth:#2340A8;--cloth-deep:#1A3088;--cloth-ink:#FFFFFF;--cloth-soft:#C3CEF5;--page:#FFFFFF;--band:#F4F6FA;--rule:#D9DEE8;--rule-strong:#B4BCCD;--ink:#15182B;--ink-2:#464B62;--ink-3:#5A6078;--ribbon:#D7263D;--ribbon-deep:#A8172B;--ok:#24724A;--warn:#A64B12;--display:\"Barlow Condensed\",\"Arial Narrow\",sans-serif;--text:\"Atkinson Hyperlegible\",system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);}.ds-tabbed{position:relative}.ds-tabbed::before{content:\"\";position:absolute;left:-1px;top:8px;bottom:8px;width:7px;background:var(--c,transparent);border-radius:0 3px 3px 0;box-shadow:inset -1px 0 0 rgb(0 0 0 / 0.12)}.ds-nowcard{position:relative;border:1px solid var(--rule-strong);border-radius:10px;padding:20px 24px 22px 30px;background:var(--page);overflow:hidden;font-family:var(--text);color:var(--ink);max-width:420px}.ds-nowcard.ds-tabbed::before{top:16px;bottom:16px;width:10px}.ds-ribbon-mark{position:absolute;top:0;right:28px;width:20px;height:56px;background:var(--ribbon);clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%);transform-origin:top;animation:ds-drop .9s var(--ease) both}@keyframes ds-drop{from{transform:scaleY(0)}to{transform:scaleY(1)}}.ds-h{font:700 64px/1.05 var(--display);margin:0 0 6px;padding-right:40px}.ds-when{color:var(--ink-2);margin:0;font-size:17px}.ds-then{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--rule);color:var(--ink-2);display:flex;align-items:center;gap:8px}.ds-then-code{font:700 22px var(--display);color:var(--ink);padding-left:13px}.ds-then-code.ds-tabbed::before{left:0;top:3px;bottom:3px}@media (prefers-reduced-motion:reduce){.ds-ribbon-mark{animation:none}}"
+    },
+    {
+      "name": "Day Rows",
+      "kind": "custom",
+      "refersTo": "week-cell",
+      "description": "Today list: fixed size ramp, next row enlarged, past rows faded, breaks as bands.",
+      "html": "<div class=\"ds-dayline\"><a class=\"ds-row ds-tabbed ds-past\" style=\"--c:#FF3F3F\" href=\"#\"><span class=\"ds-p\">1</span><span class=\"ds-t\">8:55</span><span class=\"ds-code\">S1 A5</span></a><div class=\"ds-row ds-brk\"><span></span><span class=\"ds-t\">10:35</span><span>Interval</span></div><a class=\"ds-row ds-tabbed ds-next\" style=\"--c:#7030A0\" href=\"#\"><span class=\"ds-p\">4</span><span class=\"ds-t\">11:40</span><span class=\"ds-code\">S1 B5 <span class=\"ds-next-tag\">Next</span></span></a><a class=\"ds-row ds-tabbed\" style=\"--c:#A6A6A6\" href=\"#\"><span class=\"ds-p\">5</span><span class=\"ds-t\">12:30</span><span class=\"ds-code\">S3 A2</span></a></div>",
+      "css": ":host{--cloth:#2340A8;--cloth-deep:#1A3088;--cloth-ink:#FFFFFF;--cloth-soft:#C3CEF5;--page:#FFFFFF;--band:#F4F6FA;--rule:#D9DEE8;--rule-strong:#B4BCCD;--ink:#15182B;--ink-2:#464B62;--ink-3:#5A6078;--ribbon:#D7263D;--ribbon-deep:#A8172B;--ok:#24724A;--warn:#A64B12;--display:\"Barlow Condensed\",\"Arial Narrow\",sans-serif;--text:\"Atkinson Hyperlegible\",system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);}.ds-tabbed{position:relative}.ds-tabbed::before{content:\"\";position:absolute;left:-1px;top:8px;bottom:8px;width:7px;background:var(--c,transparent);border-radius:0 3px 3px 0;box-shadow:inset -1px 0 0 rgb(0 0 0 / 0.12)}.ds-dayline{border-top:2px solid var(--ink);font-family:var(--text);font-variant-numeric:tabular-nums;max-width:520px}.ds-row{display:grid;grid-template-columns:56px 92px minmax(0,1fr);align-items:center;gap:12px;border-bottom:1px solid var(--rule);padding:8px 12px 8px 0;text-decoration:none;color:var(--ink)}a.ds-row:hover{background:var(--band)}a.ds-row:focus-visible{outline:3px solid var(--ribbon);outline-offset:2px}.ds-row.ds-tabbed::before{top:7px;bottom:7px}.ds-p{font:700 26px var(--display);color:var(--cloth);text-align:center}.ds-t{color:var(--ink-2);font-size:14px}.ds-code{font:700 22px var(--display);letter-spacing:.01em}.ds-next{padding:14px 12px 14px 0}.ds-next .ds-code{font-size:30px}.ds-next-tag{font:700 13px var(--text);color:var(--ribbon-deep);vertical-align:middle;margin-left:6px}.ds-past,.ds-past .ds-code,.ds-past .ds-p{color:var(--ink-3)}.ds-past.ds-tabbed::before{opacity:.45}.ds-brk{background:var(--band);padding:4px 12px 4px 0;color:var(--ink-3);font-size:13px;letter-spacing:.06em;text-transform:uppercase}.ds-brk .ds-t{font-size:13px;letter-spacing:0;text-transform:none}"
+    },
+    {
+      "name": "Ruled Note Field",
+      "kind": "input",
+      "refersTo": "note-field",
+      "description": "Autosaving lesson or class note on a 28px planner ruling, with save status.",
+      "html": "<div class=\"ds-field\"><h3 class=\"ds-label\">Lesson note <span class=\"ds-status ds-ok\">Saved 10:41</span></h3><textarea class=\"ds-note\" placeholder=\"What happened, what to pick up next time\"></textarea></div>",
+      "css": ":host{--cloth:#2340A8;--cloth-deep:#1A3088;--cloth-ink:#FFFFFF;--cloth-soft:#C3CEF5;--page:#FFFFFF;--band:#F4F6FA;--rule:#D9DEE8;--rule-strong:#B4BCCD;--ink:#15182B;--ink-2:#464B62;--ink-3:#5A6078;--ribbon:#D7263D;--ribbon-deep:#A8172B;--ok:#24724A;--warn:#A64B12;--display:\"Barlow Condensed\",\"Arial Narrow\",sans-serif;--text:\"Atkinson Hyperlegible\",system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);}.ds-field{max-width:440px;font-family:var(--text)}.ds-label{font:700 20px/1.05 var(--display);margin:0 0 8px;display:flex;justify-content:space-between;align-items:baseline;color:var(--ink)}.ds-status{font:400 13px var(--text);color:var(--ink-3)}.ds-ok{color:var(--ok)}.ds-note{width:100%;min-height:150px;resize:vertical;display:block;box-sizing:border-box;font:17px/28px var(--text);color:var(--ink);caret-color:var(--ribbon);border:1px solid var(--rule-strong);border-radius:8px;padding:12px 14px;background:linear-gradient(transparent 27px,#E4E8F0 27px) 0 0/100% 28px local content-box,var(--page)}.ds-note:focus{outline:none;border-color:var(--cloth);box-shadow:0 0 0 3px rgb(35 64 168 / 0.18)}.ds-note::placeholder{color:var(--ink-3)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Week-to-View Planner",
+    "overview": "The app is the teacher's own planner, not a calendar app. A cobalt bookcloth binding (the rail on desktop, the header and tab bar on phone) holds white, ruled pages. Each lesson carries its class colour the way a planner carries a coloured edge tab, and a red ribbon marks the page you are on: it drops down today's column to the current period in the week, and hangs from the top of the now card on Today.\n\nDensity follows the glance. A phone between bells must answer \"what now, what next\" in one look, so Today runs a fixed size ramp: the now card's code at 64px, the next row at 30px, later rows at 22px. The desktop week is a ruled grid indexed by large cobalt period numbers, with break and lunch as quiet shaded bands. When a lesson opens, it owns a right-hand panel and the rest of the week dims; one region dominates each screen.\n\nThe system refuses the calendar-app default of pastel blocks on a grey-white grid with a blue now line. Class colour is never a fill behind text; it is a tab on the edge, and the class code is always present as text.",
+    "keyCharacteristics": [
+      "Cobalt cloth shell, white ruled pages, near-black ink.",
+      "Class colour as a 7px edge tab, the same form at every scale.",
+      "Class codes and period numbers in Barlow Condensed; times, body and notes in Atkinson Hyperlegible with tabular numerals.",
+      "One red ribbon marks now; red appears nowhere else as decoration.",
+      "Flat surfaces divided by hairline rules; heavy 2px ink rules open each table.",
+      "Focus dims the rest rather than adding chrome."
+    ],
+    "rules": [
+      {
+        "name": "The Edge Tab Rule",
+        "body": "Class colour sits on the edge of an element as a tab, never as a fill behind text. The code beside it carries the meaning; the colour confirms it.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Ribbon Rule",
+        "body": "Ribbon red means now. It marks the current period and the focus position and does no decorative work anywhere else.",
+        "section": "colors"
+      },
+      {
+        "name": "The Teacher's Colours Rule",
+        "body": "Class colours come from the teacher's timetable and are never adjusted, harmonised or swapped for a nicer palette. Readability is solved by placement, not by changing the colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Form Rule",
+        "body": "A class code is set the same way at every scale (Barlow Condensed 700 with its edge tab), whether it is a 15px phone cell or a 64px now card. Size changes; form does not.",
+        "section": "typography"
+      },
+      {
+        "name": "The Fixed Ramp Rule",
+        "body": "On Today, size is rank: now is largest, next is next, later is smallest. Do not let a later item outgrow an earlier one.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper Rule",
+        "body": "Surfaces never lift. If something needs emphasis, rule it, tint it, or dim its neighbours.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** paint class colour only through the `--c` edge tab (7px desktop, 5px phone, 3px outer radius), the 12% selected tint, or the faded past tab.",
+      "**Do** show the class code as text wherever a class colour appears.",
+      "**Do** set every class code and period number in Barlow Condensed 700, and every time, note and body line in Atkinson Hyperlegible with tabular numerals.",
+      "**Do** keep the shell cobalt (#2340A8) and the pages white with #D9DEE8 hairlines.",
+      "**Do** open lists and grids with a 2px ink rule and divide them with hairlines.",
+      "**Do** dim neighbours (0.42 opacity) to focus an open lesson instead of adding chrome.",
+      "**Do** turn off the ribbon drop and all transitions under prefers-reduced-motion."
+    ],
+    "donts": [
+      "**Don't** fill a block with class colour behind text, or use pastel blocks on a grey grid.",
+      "**Don't** alter, lighten or replace the teacher's class colours.",
+      "**Don't** use ribbon red for anything but the ribbon itself, now and today markers, focus and the caret; status uses green and rust.",
+      "**Don't** add drop shadows or raised cards; the Paper Rule holds.",
+      "**Don't** mark now with a thin blue line; now is the red ribbon.",
+      "**Don't** let a later lesson on Today outsize the current or next one."
+    ]
+  }
+}
